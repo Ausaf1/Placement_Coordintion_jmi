@@ -1,0 +1,143 @@
+body {
+  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+  margin: 0;
+}
+
+input {
+  display: block;
+  margin: 1rem auto;
+  padding: 9px 10px;
+  border-radius: 4px;
+  border: 1px solid;
+  width: 90%;
+  box-sizing: border-box;
+  font-family: "Quicksand", "fontAwesome", sans-serif;
+}
+
+.navbar {
+  border: 1px solid;
+  display: flex;
+  height: 6%;
+  font-size: 1rem;
+  font-family: "Open Sans";
+  font-weight: bolder;
+}
+
+.comp-link {
+  text-decoration: none;
+  color: #089d08;
+}
+
+.contact {
+  text-decoration: none;
+  color: #1e2022;
+  font-size: 1rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  align-items: center;
+}
+
+.contact,
+.login {
+  margin: 0.5rem 1rem;
+}
+
+.login {
+  color: white;
+  background-color: #089d08;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 1.5rem;
+}
+
+.logo {
+  display: flex;
+  margin: 1rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+.next {
+  color: white;
+  background-color: #089d08;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+}
+
+.title .upc,
+.title {
+  padding: 2px;
+  margin-top: 4px;
+  margin-bottom: 1px;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  text-align: left;
+}
+
+.jmi {
+  margin-top: 0;
+}
+
+.top {
+  background-color: #c9d6df;
+  width: 33%;
+  height: 30%;
+  margin: 1.5% auto 0;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.main {
+  background-color: #f0f5f9;
+  width: 33%;
+  height: 33%;
+  margin: 1.5% auto 2%;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.google-signup {
+  background-color: #1e2022;
+  color: white;
+  padding: 0.5rem 2rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  width: 90%;
+}
+
+.heading {
+  font-size: 2.3rem;
+}
+
+.google-signup:hover {
+  background-color: #1e2022da;
+  transition: background-color 0.075s;
+}
+
+.login:hover,
+.next:hover {
+  background-color: #09a809;
+  transition: background-color 0.075s;
+}
+
+.comp-link:hover {
+  text-decoration: underline;
+}
+
+.contact:hover {
+  color: #1e2022b9;
+  transition: background-color 0.075s;
+}
+
+.error {
+  background-color: rgb(211, 97, 97);
+}

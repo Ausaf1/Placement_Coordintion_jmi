@@ -1,5 +1,5 @@
 {
-  "name": "tutorial-youtube",
+  "name": "placement_coordination_jmi",
   "version": "1.0.0",
   "description": "Building a login system with NodeJS",
   "main": "server.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --exec babel-node src/server.js"
   },
-  "author": "hary pham",
+  "author": "daunted dbms",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
