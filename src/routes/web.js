@@ -9,7 +9,7 @@ import initPassportLocal from "../controllers/passportLocalController";
 // Init all passport
 initPassportLocal();
 
-let router = express.Router();
+let router = express.Router();      
 
 let initWebRoutes = (app) => {
     router.get("/", loginController.checkLoggedIn, homePageController.handleHelloWorld);
