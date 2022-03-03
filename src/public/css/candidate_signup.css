@@ -39,6 +39,7 @@ input {
   display: flex;
   flex-direction: row;
   margin-left: auto;
+  margin-right: 2rem;
   align-items: center;
 }
 
@@ -60,6 +61,7 @@ input {
 .logo {
   display: flex;
   margin: 1rem;
+  margin-left: 2.5rem;
   width: 3rem;
   height: 3rem;
 }
@@ -140,4 +142,11 @@ input {
 
 .error {
   background-color: rgb(211, 97, 97);
+  padding: 0.5rem 2rem;
+  border-radius: 3px;
+  width: 90%;
+  border: none;
+  font-family: "Nunito Sans", sans-serif;
+  margin: 1.5% auto;
+  font-size: medium;
 }
