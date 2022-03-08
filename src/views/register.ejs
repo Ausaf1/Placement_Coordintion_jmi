@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,34 +10,25 @@
     <link rel="stylesheet" type="text/css" href="css/candidate_signup.css" />
 
     <!-- fontAwesome glyphs -->
-    <script
-      src="https://kit.fontawesome.com/bcb014635f.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script src="https://kit.fontawesome.com/bcb014635f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Open+Sans:wght@700&family=Quicksand&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Open+Sans:wght@700&family=Quicksand&display=swap" rel="stylesheet" />
+</head>
+
+<body>
     <nav class="navbar">
-      <div class="logo">
-        <img src="images/JMI logo.jpeg" alt="jamia_logo" />
-      </div>
-      <div class="title">
-        <h3 class="upc">University Placement Cell</h3>
-        <p class="jmi">Jamia Millia Islamia, New Delhi</p>
-      </div>
-      <div class="links">
-        <a href="" class="contact"
-          ><i class="fa fa-solid fa-phone"></i> Contact Us</a
+        <div class="logo">
+            <img src="images/JMI logo.jpeg" alt="jamia_logo" />
+        </div>
+        <div class="title">
+            <h3 class="upc">University Placement Cell</h3>
+            <p class="jmi">Jamia Millia Islamia, New Delhi</p>
+        </div>
+        <div class="links">
+            <a href="" class="contact"><i class="fa fa-solid fa-phone"></i> Contact Us</a
         >
         <button class="login"><i class="fa fa-sign-in"></i> Login</button>
       </div>
@@ -45,45 +37,31 @@
       <p>
         This sign up is only for students, company representatives are requested
         to create an account <a class="comp-link" href="">here</a>.
-      </p>
-    </div>
-    <div class="main">
-      <h1 class="heading">Create New Account</h1>
-      <hr />
-      <h2>Account</h2>
+            </p>
+        </div>
+        <div class="main">
+            <h1 class="heading">Create New Account</h1>
+            <hr />
+            <h2>Account</h2>
 
-      <button class="google-signup">
+            <button class="google-signup">
         <i class="fab fa-google"></i> Create account using Google
       </button>
-      <p>OR</p>
-      <form action="/register" name="candidate-form" method="post">
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="&#xf0e0;  Email"
-          required
-        />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="&#xf023;  Password"
-          required
-        />
-        <input
-          type="password"
-          name="passwordConfirmation"
-          placeholder="&#xf3ed;  Confirm Password"
-          required
-        />
-        <div>
-          <% if(errors != ""){%> <% errors.forEach((item)=> {%>
-          <button class="error"><%= item %></button>
-          <% }) %> <%}%>
+            <p>OR</p>
+            <form action="/register" name="candidate-form" method="post">
+                <input type="email" id="email" name="email" placeholder="&#xf0e0;  Email" required />
+                <input type="password" id="password" name="password" placeholder="&#xf023;  Password" required />
+                <input type="password" name="passwordConfirmation" placeholder="&#xf3ed;  Confirm Password" required />
+                <div>
+                    <% if(errors != ""){%>
+                        <% errors.forEach((item)=> {%>
+                            <button class="error"><%= item %></button>
+                            <% }) %>
+                                <%}%>
+                </div>
+                <input class="next" type="submit" value="Next" />
+            </form>
         </div>
-        <input class="next" type="submit" value="Next" />
-      </form>
-    </div>
-  </body>
+</body>
+
 </html>
