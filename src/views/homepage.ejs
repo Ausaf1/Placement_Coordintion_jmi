@@ -35,6 +35,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/profile.css" />
     <title>profile page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -43,8 +44,11 @@
             <img src="images/JMI logo.jpeg" alt="image" />
         </a>
         <span class="menu-space1"></span>
-
-        <a href="##" class="logout">log out</a>
+        <div>
+            <form method="POST" action="/logout">
+                <button type="submit" class="btn btn-primary">Log out</button>
+            </form>
+        </div>
     </nav>
 
     <nav class="nav2">
@@ -62,7 +66,10 @@
             <li><a href="##">placements</a></li>
             <li><a href="##">contacts</a></li>
         </ul>
-        <div class="container">welcome to jamia millia islamia</div>
+        <div class="container">
+            <h2>Welcome "
+                <%= user.fullname%>"</h2>
+        </div>
     </nav>
 
     <script src="js/profile.js"></script>

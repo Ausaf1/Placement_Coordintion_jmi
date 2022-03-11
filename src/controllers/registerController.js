@@ -3,11 +3,11 @@ import { validationResult } from "express-validator";
 
 let getPageRegister = (req, res) => {
     return res.render("register.ejs", {
-        errors: req.flash("errors")
+        errors: req.flash("errors"),
     });
 };
 
-let createNewUser = async (req, res) => {
+let createNewUser = async(req, res) => {
     //validate required fields
     let errorsArr = [];
     let validationErrors = validationResult(req);
@@ -22,9 +22,10 @@ let createNewUser = async (req, res) => {
 
     //create a new user
     let newUser = {
-        fullname: req.body.fullName,
+        fullname: req.body.fullname,
+        studentid: req.body.studentid,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
     };
     try {
         await registerService.createNewUser(newUser);
@@ -36,5 +37,5 @@ let createNewUser = async (req, res) => {
 };
 module.exports = {
     getPageRegister: getPageRegister,
-    createNewUser: createNewUser
+    createNewUser: createNewUser,
 };
