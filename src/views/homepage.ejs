@@ -59,16 +59,79 @@
             <input type="file" id="image_input" accept="image/png,image/jpg" />
 
             <li>
-                <a href="##"></a>
+                <a href="#
+                    #"></a>
             </li>
             <li><a href="##">profile</a></li>
-            <li><a href="##">active sessions</a></li>
-            <li><a href="##">placements</a></li>
-            <li><a href="##">contacts</a></li>
+            <form action="/active" method="POST">
+                <li>
+                    <a><input type="submit" value="ACTIVE SESSIONS" /></a>
+                </li>
+            </form>
+            <form action="/active" method="POST">
+                <li>
+                    <a><input type="submit" value="PLACEMENTS" /></a>
+                </li>
+            </form>
+            <form action="/active" method="POST">
+                <li>
+                    <a><input type="submit" value="CONTACTS" /></a>
+                </li>
+            </form>
         </ul>
+
         <div class="container">
-            <h2>Welcome "
-                <%= user.fullname%>"</h2>
+            <!--- <h2>Welcome "
+                <%= user.fullname%>"</h2>-->
+
+            <div class="card-body">
+                <form class="forms">
+                    <table class="table">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="col-sm-12">
+                                        <a class="btnedit" target="__blank"><input type="submit"></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td class="td1">name</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="td1">student id</td>
+                                <td>007</td>
+                            </tr>
+                            <tr>
+                                <td class="td1">course</td>
+                                <td>b.tech</td>
+                            </tr>
+                            <tr>
+                                <td class="td1">gender</td>
+                                <td>male</td>
+                            </tr>
+                            <tr>
+                                <td class="td1">address</td>
+                                <td>universe</td>
+                            </tr>
+                            <tr>
+                                <td class="td1">nationality</td>
+                                <td>earth</td>
+                            </tr>
+                            <tr>
+                                <td class="td1">contact no</td>
+                                <td>007</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
         </div>
     </nav>
 

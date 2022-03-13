@@ -7,7 +7,7 @@ let getPageLogin = (req, res) => {
     });
 };
 
-let handleLogin = async (req, res) => {
+let handleLogin = async(req, res) => {
     let errorsArr = [];
     let validationErrors = validationResult(req);
     if (!validationErrors.isEmpty()) {
