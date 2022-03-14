@@ -1,6 +1,6 @@
 let landingPage = async(req, res) => {
     return res.render("landingPage.ejs", {
-        errors: req.flash("errors"),
+        // errors: req.flash("errors"),
     });
 };
 

@@ -6,16 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placement Cell</title>
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-     -->
-    <!-- Bootstrap core CSS -->
-    <link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/landingPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
 
 </head>
 
@@ -23,100 +19,180 @@
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">UNIVERSITY PLACEMENT CELL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#signup">Sign-up</i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#contact" tabindex="-1">Contact <i class="fa fa-phone"></i></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <header id="home" class="header page-header container-fluid">
+		<div class="overlay"></div>
+		<div class="heading">
+			<h1>WELCOME!</h1>
+			<p>Jamia Millia Islamia placement and training cell helps bring students and companies together and bridge any knowledge gap for prospective employment. Students are provided with the skills and training necessary to meet the eligibility criteria of recruiters. As a part of preparing students for placement tests and interviews, the JMI placement cell conducts mock interviews and written tests. The placement and training cell works closely with prospective companies to provide them information about the courses and batches, it also helps companies organize roadshows where they showcase the kind of work they are doing and skills required for the same.
+</p>
+			<a class="btn btn-success" href="https://www.jmi.ac.in/">Official Website</a>
+            </div>
+            </header>
+
+            <!-- <section class="home " id="home">
         <div class="max-width">
-            <div class="logo">University Placement Cell</div>
-            <!-- <div class="container box borderYtoX"> 
-            <ul class="menu">
-                <li><a href="#home" class="menu-btn">Home</a></li>
-                <li><a href="#about" class="menu-btn">About</a></li>
-                <li><a href="#Login" class="menu-btn">Login</a></li>
-                <li><a href="#contact" class="menu-btn">Contact</a></li>
-            </ul>
-            </div> -->
+         
+            </div>
+           </section> -->
 
+            <section class="about" id="about">
+                <div class="max-width">
 
-            <ul class="menu">
-                <li class="menu-btn"><a href="#home">HOME</a></li>
-                <li class="menu-btn"><a href="#about">ABOUT</a></li>
-                <li class="menu-btn"><a href="#Login">LOGIN</a></li>
-                <li class="menu-btn"><a href="#contact">CONTACT</a></li>
-            </ul>
-
-
-
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="10000">
+                                <img src="https://images5.alphacoders.com/432/thumb-1920-432822.jpg" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Company Name</h5>
+                                    <!-- <p>Some representative placeholder content for the first slide.</p> -->
+                                    <a class="btn btn-success" href="/login">APPLY</a>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="https://images5.alphacoders.com/432/thumb-1920-432822.jpg" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Company Name</h5>
+                                    <!-- <p>Some representative placeholder content for the second slide.</p> -->
+                                    <a class="btn btn-success" href="/login">APPLY</a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://images5.alphacoders.com/432/thumb-1920-432822.jpg" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Company Name</h5>
+                                    <!-- <p>Some representative placeholder content for the third slide.</p> -->
+                                    <a class="btn btn-success" href="/login">APPLY</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+                    </div>
+            </section>
+            <section class="Login" id="Login">
+                <div class="max-width">
+                    <!--         
+          <div class="row  row-cols-md-8 g-4">
+            <div class="col ">
+              <div class="card">
+                <img src="https://th.bing.com/th/id/R.2faa4e28713dc962310e9f0047ff18e3?rik=n1VDrWI%2bk2QduA&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_311846.png&ehk=8BNi6npflzhZPGZub6urwGF3PWz3kxhXvxZ1RRw7XHQ%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Go to Signup Page!</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <a href="#" class="btn btn-primary">SIGNUP <i class="fas fa-user-plus"></i></a>
             </div>
         </div>
-    </nav>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="https://th.bing.com/th/id/R.2faa4e28713dc962310e9f0047ff18e3?rik=n1VDrWI%2bk2QduA&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_311846.png&ehk=8BNi6npflzhZPGZub6urwGF3PWz3kxhXvxZ1RRw7XHQ%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Go to Login Page!</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 
-
-    <section class="home" id="home">
-        <div class="max-width">
-            <div class="home-content">
-                <h1 class="text">UNIVERSITY PLACEMENT CELL</h1>
-                <!-- <h4 class="text2">University Placement Cell welcomes all organizations to make pre-placement talks, which provide an opportunity for the organizations to showcase their corporate requirements and the job profiles.</h4> -->
+                    <a href="#" class="btn btn-primary">LOGIN <i class="fas fa-user"></i></a>
+                </div>
             </div>
         </div>
-    </section>
+        -->
 
+                    <hr class="featurette-divider">
 
-    <section class="about" id="about">
-        <div class="slider">
-            <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav" />
-            <input type="radio" name="slider" title="slide2" class="slider__nav" />
-            <input type="radio" name="slider" title="slide3" class="slider__nav" />
-            <input type="radio" name="slider" title="slide4" class="slider__nav" />
-            <div class="slider__inner">
-                <div class="slider__contents"><i class="slider__image fa fa-codepen"></i>
-                    <h2 class="slider__caption">codepen</h2>
-                    <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                    <div class="row featurette">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading">Go to Login Page!</h2>
+                            <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+                            <a href="/login" class="btn btn-primary" color=rgb(57, 175, 57)>LOGIN <i class="fas fa-user-plus"></i></a>
+
+                        </div>
+                        <div class="col-md-5">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="https://th.bing.com/th/id/OIP.2mOnyDDiSOsxkH1OUQl4agHaHa?w=218&h=218&c=7&r=0&o=5&pid=1.7"></image></svg>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="slider__contents"><i class="slider__image fa fa-newspaper-o"></i>
-                    <h2 class="slider__caption">newspaper-o</h2>
-                    <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+
+            </section>
+            <section class="signup" id="signup">
+                <div class="max-width">
+                    <hr class="featurette-divider">
+
+                    <div class="row featurette">
+                        <div class="col-md-7 order-md-2">
+                            <h2 class="featurette-heading">Go to Sign-up Page!</h2>
+                            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+                            <a href="/register" class="btn btn-primary">SIGNUP <i class="fas fa-user-plus"></i></a>
+
+                        </div>
+                        <div class="col-md-5 order-md-1">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="https://th.bing.com/th/id/OIP.2mOnyDDiSOsxkH1OUQl4agHaHa?w=218&h=218&c=7&r=0&o=5&pid=1.7"></image></svg>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="slider__contents"><i class="slider__image fa fa-television"></i>
-                    <h2 class="slider__caption">television</h2>
-                    <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
-                </div>
-                <div class="slider__contents"><i class="slider__image fa fa-diamond"></i>
-                    <h2 class="slider__caption">diamond</h2>
-                    <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
-                </div>
-            </div>
 
-    </section>
-
-
-    <section class="Login" id="Login">
-
-    </section>
+            </section>
 
 
 
-    <section class="contact" id="contact">
-        <div class="max-width">
-            <h2 class="title">Contact me</h2>
+            <section class="contact" id="contact">
+                <div class="max-width">
+                    <h2 class="title">Contact Us</h2>
 
-            <form class="contact-form" method="post">
-                <input type="text" class="contact-form-fill" placeholder="Your Name">
-                <input type="email" class="contact-form-fill" placeholder="Your Email">
-                <textarea class="contact-form-fill" placeholder="Your Message"></textarea>
-                <input type="submit" class="contact-form-btn" value="Send">
-            </form>
-
-
+                    <form class="contact-form" method="">
+                        <input type="text" class="contact-form-fill" placeholder="Your Name">
+                        <input type="email" class="contact-form-fill" placeholder="Your Email">
+                        <textarea class="contact-form-fill" placeholder="Your Message"></textarea>
+                        <input type="submit" class="contact-form-btn" value="Send">
+                    </form>
 
 
 
-            <script src="js/landingPage.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-            <!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> -->
-            <!-- <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
-            <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+                    <script src="js/landingPage.js"></script>
+                    <!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> -->
+
 </body>
 
 </html>

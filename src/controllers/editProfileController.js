@@ -1,9 +1,8 @@
 let editProfile = async(req, res) => {
-    return res.render("editProfile", {
-        title: "Edit Profile",
-        user: req.user,
-        message: req.flash("message"),
-        error: req.flash("error"),
+    return res.render("editProfile.ejs", {
+        user: req.user
+            // message: req.flash("message"),
+            // error: req.flash("error"),
     });
 };
 

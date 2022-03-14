@@ -63,21 +63,9 @@
                     #"></a>
             </li>
             <li><a href="##">profile</a></li>
-            <form action="/active" method="POST">
-                <li>
-                    <a><input type="submit" value="ACTIVE SESSIONS" /></a>
-                </li>
-            </form>
-            <form action="/active" method="POST">
-                <li>
-                    <a><input type="submit" value="PLACEMENTS" /></a>
-                </li>
-            </form>
-            <form action="/active" method="POST">
-                <li>
-                    <a><input type="submit" value="CONTACTS" /></a>
-                </li>
-            </form>
+            <li><a href="/active">active sessions</a></li>
+            <li><a href="##">placement</a></li>
+            <li><a href="##">contacts</a></li>
         </ul>
 
         <div class="container">
@@ -94,7 +82,7 @@
                             <tr>
                                 <td colspan="2">
                                     <div class="col-sm-12">
-                                        <a class="btnedit" target="__blank"><input type="submit"></a>
+                                        <a href="/editProfile" class="btnedit" target="__blank">edit</a>
                                     </div>
                                 </td>
                             </tr>
@@ -102,31 +90,35 @@
                         <tbody>
                             <tr>
                                 <td class="td1">name</td>
-                                <td></td>
+                                <td>
+                                    <%=user.fullname %>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="td1">student id</td>
-                                <td>007</td>
+                                <td>
+                                    <%=user.studentid%>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="td1">course</td>
-                                <td>b.tech</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="td1">gender</td>
-                                <td>male</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="td1">address</td>
-                                <td>universe</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="td1">nationality</td>
-                                <td>earth</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="td1">contact no</td>
-                                <td>007</td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>

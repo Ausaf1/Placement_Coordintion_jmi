@@ -15,16 +15,16 @@ initPassportLocal();
 let router = express.Router();
 
 let initWebRoutes = (app) => {
+    router.get("/login", loginController.getPageLogin);
     router.get(
         "/",
         loginController.checkLoggedIn,
         homePageController.handleHelloWorld
     );
-    router.get("/landingPage", landingPageController.landingPage);
     router.get(
-        "/login",
+        "/landingPage",
         loginController.checkLoggedOut,
-        loginController.getPageLogin
+        landingPageController.landingPage
     );
     router.post(
         "/login",
@@ -35,13 +35,18 @@ let initWebRoutes = (app) => {
             failureFlash: true,
         })
     );
-    router.post(
+    router.get("/active", activeController.activeSessions);
+    router.get(
         "/active",
         loginController.checkLoggedIn,
         activeController.activeSessions
     );
 
-    router.post("/editProfile", editProfileController.editProfile);
+    router.get(
+        "/editProfile",
+        loginController.checkLoggedIn,
+        editProfileController.editProfile
+    );
 
     router.get("/register", registerController.getPageRegister);
     router.post(

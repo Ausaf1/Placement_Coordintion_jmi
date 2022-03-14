@@ -30,7 +30,7 @@ let handleLogin = async(req, res) => {
 
 let checkLoggedIn = (req, res, next) => {
     if (!req.isAuthenticated()) {
-        return res.redirect("/login");
+        return res.redirect("/landingPage");
     }
     next();
 };
@@ -44,7 +44,7 @@ let checkLoggedOut = (req, res, next) => {
 
 let postLogOut = (req, res) => {
     req.session.destroy(function(err) {
-        return res.redirect("/login");
+        return res.redirect("/landingPage");
     });
 };
 

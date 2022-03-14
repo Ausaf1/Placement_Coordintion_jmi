@@ -28,34 +28,29 @@
     <section id="title">
         <!-- Nav Bar -->
 
-        <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
-            <div class="logo">
-                <img src="images/JMI logo.jpeg" alt="uni icon" />
-            </div>
-
-            <a class="navbar-brand" href="">UNIVERSITY PLACEMENT SYSTEM
-          <br />
-          <p class="navbar-brand">Jamia Millia Islamia, New Delhi</p>
-        </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">UNIVERSITY PLACEMENT CELL</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item item">
-                        <a class="nav-link" href="#Home">Home</a>
-                    </li>
-                    <li class="nav-item item">
-                        <a class="nav-link" href="#About">About</a>
-                    </li>
-                    <li class="nav-item item">
-                        <a class="nav-link" href="#Contacts">Contacts</a>
-                    </li>
-                    <li class="nav-item item">
-                        <a class="nav-link" href="#Profile">Profile</a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/active">Active Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Placements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/login">Logout</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </section>
@@ -98,17 +93,18 @@
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (first name)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputFirstName">First name</label
+                                    <label class="small mb-1" for="inputFirstName" aria-required="true">Full Name</label
                     >
                     <input
                       class="form-control"
                       id="inputFirstName"
                       type="text"
-                      placeholder="Enter your first name"
+                      placeholder="Enter your name"
+                      value="<%=user.fullname %> "
                     />
                   </div>
                   <!-- Form Group (last name)-->
-                  <div class="col-md-6">
+                  <!-- <div class="col-md-6">
                     <label class="small mb-1" for="inputLastName"
                       >Last name</label
                     >
@@ -118,7 +114,7 @@
                       type="text"
                       placeholder="Enter your last name"
                     />
-                  </div>
+                  </div> -->
                 </div>
                 <!-- Form Row        -->
                 <div class="row gx-3 mb-3">
@@ -149,6 +145,7 @@
                     id="inputEmailAddress"
                     type="email"
                     placeholder="Enter your email address"
+                    value="<%=user.email %>"
                   />
                 </div>
                 <!-- Form Row-->
