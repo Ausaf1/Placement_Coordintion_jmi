@@ -8,6 +8,7 @@ import editProfileController from "../controllers/editProfileController";
 import auth from "../validation/authValidation";
 import passport from "passport";
 import initPassportLocal from "../controllers/passportLocalController";
+import Swal from "sweetalert2";
 
 // Init all passport
 initPassportLocal();

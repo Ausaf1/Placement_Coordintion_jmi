@@ -11,15 +11,16 @@ body {
 }
 
 ul.menu2 {
-    height: 650px;
+    min-height: fit-content;
     list-style: none;
     position: relative;
     align-items: center;
     display: list-item;
     background-color: rgb(82, 97, 107);
     width: 20%;
-    min-height: 100%;
+    height: 650px;
     padding: 5px;
+    ;
     margin: 0%;
 }
 
@@ -34,6 +35,18 @@ ul.menu2 {
     height: 65px;
     box-shadow: 5px 10px 30px rgb(201, 214, 223);
     z-index: 1;
+}
+
+.title .upc,
+.title {
+    position: relative;
+    padding: 0.5%;
+    margin-top: 1%;
+    margin-bottom: 1px;
+    font-size: 0.85rem;
+    font-weight: bolder;
+    text-align: left;
+    width: 250px;
 }
 
 .nav2 {
@@ -56,7 +69,7 @@ a {
 }
 
 .menu2 li a {
-    height: 75%;
+    height: 100%;
     line-height: 75px;
     margin: 0px;
     padding: 0px 0px;
@@ -65,7 +78,7 @@ a {
     justify-content: center;
     display: flex;
     font-size: 1em;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 500px;
     letter-spacing: 1px;
     color: rgb(240, 245, 249);
@@ -125,7 +138,7 @@ a {
 .container {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 650px;
     display: flex;
     justify-content: center;
     background-color: rgb(201, 214, 223);
@@ -151,13 +164,13 @@ a {
 }
 
 .menu-space1 {
-    width: 75%;
+    width: 65%;
 }
 
 .card-body {
     width: 100%;
     min-height: 1px;
-    height: 90%;
+    height: 100%;
     padding: 1rem;
     position: relative;
 }
@@ -165,6 +178,7 @@ a {
 .td1 {
     text-transform: capitalize;
     width: 35%;
+    font-weight: 700;
 }
 
 .btnedit {
@@ -182,6 +196,7 @@ a {
 .btnedit:hover {
     background: #08611f;
     text-decoration: none;
+    color: white;
 }
 
 .forms {
@@ -201,11 +216,12 @@ table.table td,
 table.table th {
     border: 1px solid #AAAAAA;
     padding: 2%;
+    text-transform: capitalize;
 }
 
 table.table tbody td {
     font-size: 17px;
-    line-height: 30px;
+    line-height: 30%;
 }
 
 table.table tr:nth-child(even) {

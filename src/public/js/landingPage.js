@@ -27,3 +27,22 @@ $(document).ready(function() {
         $(".menu-btn i").toggleClass("active");
     });
 });
+
+$('#button-a').click(function() {
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var message = $('#message').val();
+    if (name == "" || email == "" || message == "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please fill all the fields',
+        })
+    } else {
+        Swal.fire({
+            icon: 'success',
+            title: 'Successfully submitted',
+            text: 'Thank you for your message',
+        })
+    }
+});
