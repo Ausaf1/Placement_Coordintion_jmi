@@ -7,7 +7,6 @@ import cookieParser from 'cookie-parser';
 import session from "express-session";
 import connectFlash from "connect-flash";
 import passport from "passport";
-// import sweetAlert from "sweetalert2";
 
 let app = express();
 

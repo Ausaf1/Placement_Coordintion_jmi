@@ -1,3 +1,4 @@
+// setting babel   
 {
   "presets":["env"]
 }
