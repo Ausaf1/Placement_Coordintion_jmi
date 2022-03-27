@@ -8,8 +8,9 @@ let editProfile = async (req, res) => {
             if (err) {
                 console.log(err);
             }
+            // console.log("Rows");
+            // console.log(rows[0]);
             if (rows.length > 0) {
-                console.log(rows[0]);
                 return res.render("editProfile.ejs", {
                     user: req.user,
                     userDetails: rows[0]
