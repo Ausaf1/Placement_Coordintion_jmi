@@ -82,12 +82,12 @@
                 <div class="card mb-4">
                     <div class="card-header">Edit Details</div>
                     <div class="card-body">
-                        <form>
+                        <form method="POST" action="/editProfile">
                             <!-- Form Group (username)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputUsername">Enrollment number
                   </label>
-                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your Enrollment number" />
+                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your Enrollment number" name="enrollmentNo" value="<%=userDetails.enrollmentNo %> "/>
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
@@ -103,42 +103,24 @@
                       value="<%=user.fullname %> "
                     />
                   </div>
-                  <!-- Form Group (last name)-->
-                  <!-- <div class="col-md-6">
-                    <label class="small mb-1" for="inputLastName"
-                      >Last name</label
-                    >
-                    <input
-                      class="form-control"
-                      id="inputLastName"
-                      type="text"
-                      placeholder="Enter your last name"
-                    />
-                  </div> -->
                 </div>
                 <!-- Form Row        -->
                 <div class="row gx-3 mb-3">
                   <!-- Form Group (Branch)-->
                   <div class="col-md-6">
                     <label class="small mb-1" for="inputOrgName">Branch</label>
-                                    <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your branch name" />
+                                    <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your branch name" name="branch" value="<%= userDetails.branch%> " />
                                 </div>
                                 <!-- Form Group (Graduation year)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputLocation">Year of graduation</label
-                    >
-                    <input
-                      class="form-control"
-                      id="inputLocation"
-                      type="text"
-                      placeholder="Enter your graduating year"
-                    />
-                  </div>
-                </div>
-                <!-- Form Group (email address)-->
-                <div class="mb-3">
-                  <label class="small mb-1" for="inputEmailAddress"
-                    >Email address</label
+                                    <label class="small mb-1" for="inputLocation">Year of graduation</label>
+                                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your graduating year" name="yearOfGraduation" value="<%=userDetails.yearOfGraduation %> " />
+                                </div>
+
+                            </div>
+                            <!-- Form Group (email address)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">Email address</label
                   >
                   <input
                     class="form-control"
@@ -160,19 +142,22 @@
                       id="inputPhone"
                       type="tel"
                       placeholder="Enter your phone number"
+                      name="contact"
+                      value="<%=userDetails.contact %>"
                     />
                   </div>
                   <!-- Form Group (Birthday)-->
                   <div class="col-md-6">
-                    <label class="small mb-1" for="inputBirthday"
-                      >Date of Birth</label
+                    <label class="small mb-1" for="inputStudentId"
+                      >Student Id</label
                     >
                     <input
                       class="form-control"
-                      id="inputBirthday"
+                      id="inputStudentId"
                       type="text"
-                      name="birthday"
-                      placeholder="DD/MM/YYYY"
+                      name="studentId"
+                      placeholder="Enter Student id"
+                      value="<%=user.studentid %> "
                     />
                   </div>
                 </div>
@@ -182,18 +167,19 @@
                   <!-- Form Group (Gender)-->
                   <div class="col-md-6">
                     <label class="small mb-1" for="inputGender">Gender</label>
-                                    <input class="form-control" id="inputGender" type="text" placeholder="Female / Male / Other" />
-                                </div>
-                                <!-- Form Group (score)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputScore">Average GPA</label
+                                <input class="form-control" id="inputGender" type="text" placeholder="Female / Male / Other" name="gender" value="<%=userDetails.gender %> " />
+                            </div>
+                            <!-- Form Group (score)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputScore">Average GPA</label
                     >
                     <input
                       class="form-control"
                       id="inputScore"
-                      type="number"
-                      name="GPA"
+                      type="text"
+                      name="avgGpa"
                       placeholder="Avg GPA"
+                      value="<%=userDetails.avgGpa %> "
                     />
                   </div>
                 </div>
@@ -206,13 +192,29 @@
                   <input
                     class="form-control"
                     id="inputResume"
-                    type="url"
+                    type="text"
                     placeholder="Enter your Resumé Link"
+                    name="resume"
+                    value="<%=userDetails.resume %>"
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label class="small mb-1" for="inputAddress"
+                    >Address</label
+                  >
+                  <input
+                    class="form-control"
+                    id="inputAddress"
+                    type="text"
+                    placeholder="Enter your permanent address"
+                    name="address"
+                    value="<%=userDetails.address %>"
                   />
                 </div>
 
                 <!-- Save changes button-->
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-primary" type="submit">
                   Save changes
                 </button>
               </form>

@@ -47,6 +47,7 @@ let initWebRoutes = (app) => {
         loginController.checkLoggedIn,
         editProfileController.editProfile
     );
+    router.post("/editProfile", editProfileController.editProfileUser);
 
     router.get("/register", registerController.getPageRegister);
     router.post(
@@ -54,6 +55,7 @@ let initWebRoutes = (app) => {
         auth.validateRegister,
         registerController.createNewUser
     );
+    router.get("/logout", loginController.postLogOut);
     router.post("/logout", loginController.postLogOut);
     return app.use("/", router);
 };
