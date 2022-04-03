@@ -36,10 +36,6 @@ ul.menu2 {
     z-index: 1;
 } */
 
-.nav1 {
-  padding: 2%;
-}
-
 .nav2 {
   position: relative;
   display: flex;
@@ -53,10 +49,10 @@ ul.menu2 {
   z-index: 1;
 }
 
-div.container-fluid {
-  padding: 1.25%;
-  display: flex;
-}
+/* div.container-fluid {
+    padding: 1.25%;
+    display: flex;
+} */
 
 .main {
   display: flex;
@@ -64,8 +60,7 @@ div.container-fluid {
 }
 
 .heading {
-  margin: 0.75%;
-  padding-bottom: 1.25%;
+  margin: 1.25rem 0.75%;
 }
 
 a {
@@ -103,9 +98,15 @@ input {
   width: 100%;
 }
 
+.logo {
+  margin-left: 1%;
+  margin-right: 1.5%;
+}
+
 .logo img {
   height: 60px;
-  justify-content: center;
+  width: 60px;
+  border-radius: 2rem;
 }
 
 #pic {
@@ -123,10 +124,16 @@ input {
 }
 
 .logout {
-  color: rgb(240, 245, 249);
-  font-weight: 500;
-  font-size: 0.9em;
+  display: flex;
+  margin-right: auto;
 }
+
+/* .logout {
+    color: rgb(240, 245, 249);
+    font-weight: 500;
+    font-size: 0.9em;
+    justify-content: flex-end;
+} */
 
 /* .container {
     position: relative;
@@ -251,6 +258,10 @@ table.table tfoot .links a {
     width: 90%;
     height: 75%;
     min-height: 200px;
+  }
+  .logout {
+    display: flex;
+    margin-right: auto;
   }
 }
 

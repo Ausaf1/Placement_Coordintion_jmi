@@ -1,1 +1,101 @@
-<h1>ACTIVE SESSIONS</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Active Sessions</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/activeSessions.css" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Open+Sans:wght@700&family=Quicksand&display=swap" rel="stylesheet" />
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="logo">
+                <img src="images/JMI logo.jpeg" alt="jamia_logo" />
+            </div>
+            <a class="navbar-brand title" href="#">UNIVERSITY PLACEMENT CELL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto ">
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="/">Profile</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link active" aria-current="page" href="/editProfile">Edit Profile</a>
+                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/apply">Apply</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/login">Logout</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="top">
+      <h1 class="title">ACTIVE SESSIONS</h1>
+    </div>
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-0">Company 1</h6>
+            <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
+            <p>Application Status: </p>
+          </div>
+          <small class="opacity-50 text-nowrap">now</small>
+        </div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-0">Company 2</h6>
+            <p class="mb-0 opacity-75">Some placeholder content in a paragraph that goes a little longer so it wraps to a new line.</p>
+            <p>Application Status: </p>
+          </div>
+          <small class="opacity-50 text-nowrap">3d</small>
+        </div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-0">Company 3</h6>
+            <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
+            <p>Application Status: </p>
+          </div>
+          <small class="opacity-50 text-nowrap">1w</small>
+        </div>
+      </a>
+    </div>
+
+    <div class="offers">
+      <button class="btn btn-success">
+        <a class="application" href="/apply"> Check for more available offers</a>
+      </button>
+    </div>
+    
+    <script src="js/activeSessions.js"></script>
+    </body>
+</html>

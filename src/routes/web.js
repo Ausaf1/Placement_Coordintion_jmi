@@ -5,6 +5,7 @@ import loginController from "../controllers/loginController";
 import landingPageController from "../controllers/landingPageController";
 import activeController from "../controllers/activeController";
 import editProfileController from "../controllers/editProfileController";
+import applyController from "../controllers/applyController";
 import auth from "../validation/authValidation";
 import passport from "passport";
 import initPassportLocal from "../controllers/passportLocalController";
@@ -41,6 +42,8 @@ let initWebRoutes = (app) => {
         loginController.checkLoggedIn,
         activeController.activeSessions
     );
+
+    router.get("/apply", applyController.apply);
 
     router.get(
         "/editProfile",
