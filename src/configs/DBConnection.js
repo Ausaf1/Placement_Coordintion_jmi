@@ -17,6 +17,19 @@ connection.query("CREATE TABLE IF NOT EXISTS userdetails (enrollmentNo VARCHAR(2
     }
 });
 
+// connection.query("CREATE TABLE IF NOT EXISTS images (id int NOT NULL,imgsrc varchar(255) NOT NULL,PRIMARY KEY (`id`),CONSTRAINT `id1` FOREIGN KEY (`id`) REFERENCES `placement_coordination`.`users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8;", (err, result) => {
+//     if (err) {
+//         console.log(err);
+//     }
+//     else {
+//         console.log("Table created");
+//     }
+// });
+
+
+
+
+
 connection.connect(function (err) {
     if (err) throw err;
     console.log("Database connected!");

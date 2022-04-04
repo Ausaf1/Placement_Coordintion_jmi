@@ -27,7 +27,7 @@ let editProfile = async (req, res) => {
 
 
 let editProfileUser = async (req, res) => {
-    console.log("jggdfd");
+    // console.log("jggdfd");
     console.log(req.body);
     let userDetails = {
         id: req.user.id,

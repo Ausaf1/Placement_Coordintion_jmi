@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import session from "express-session";
 import connectFlash from "connect-flash";
 import passport from "passport";
+import multer from "multer";
 
 let app = express();
 
@@ -33,9 +34,12 @@ configViewEngine(app);
 //Enable flash message
 app.use(connectFlash());
 
+
 //Config passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+
 
 // init all web routes
 initWebRoutes(app);

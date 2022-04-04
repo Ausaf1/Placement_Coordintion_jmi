@@ -32,8 +32,18 @@
       <div
         class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark position-sticky col-md-3 col-lg-2 col-sm-12 sidebar collapse menu2"
       >
-        <div id="pic"></div>
-        <input type="file" id="image_input" accept="image/png,image/jpg" />
+        <!-- <input
+          type="file"
+          id="image_input"
+          accept="image/png,image/jpg"
+          name="avatar"
+          required
+        /> -->
+        <form action="/" enctype="multipart/form-data" method="post">
+          <div id="pic"></div>
+          <input type="file" id="image_input" name="image" accept="image/*" />
+          <input type="submit" value="Upload" />
+        </form>
         <hr />
         <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

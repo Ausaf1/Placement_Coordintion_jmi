@@ -8,6 +8,4 @@ image_input.addEventListener("change", function () {
         document.querySelector("#pic").style.backgroundImage = `url(${uploaded_image})`;
     });
     reader.readAsDataURL(this.files[0]);
-
-
 })

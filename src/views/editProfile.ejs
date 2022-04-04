@@ -84,134 +84,145 @@
                     <div class="card-body">
                         <form method="POST" action="/editProfile">
                             <!-- Form Group (username)-->
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputUsername">Enrollment number
-                  </label>
-                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your Enrollment number" name="enrollmentNo" value="<%=userDetails.enrollmentNo %> " />
-                            </div>
+                          <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Enrollment number</label>
+                            <input class="form-control" id="inputUsername" type="text" pattern="[0-9]{2}-[0-9]{5}" placeholder="Enter your Enrollment number" name="enrollmentNo" value="<%=userDetails.enrollmentNo %>" />
+                          </div>
                             <!-- Form Row-->
-                            <div class="row gx-3 mb-3">
+                          <div class="row gx-3 mb-3">
                                 <!-- Form Group (first name)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputFirstName" aria-required="true">Full Name</label
-                    >
-                    <input
-                      class="form-control"
-                      id="inputFirstName"
-                      type="text"
-                      placeholder="Enter your name"
-                      value="<%=user.fullname %> "
-                    />
-                  </div>
-                </div>
-                <!-- Form Row        -->
-                <div class="row gx-3 mb-3">
-                  <!-- Form Group (Branch)-->
-                  <div class="col-md-6">
-                    <label class="small mb-1" for="inputOrgName">Branch</label>
-                                    <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your branch name" name="branch" value="<%= userDetails.branch%> " />
-                                </div>
-                                <!-- Form Group (Graduation year)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputLocation">Year of graduation</label>
-                                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your graduating year" name="yearOfGraduation" value="<%=userDetails.yearOfGraduation %> " />
-                                </div>
-
+                            <div class="col-md-12">
+                              <label class="small mb-1" for="inputFirstName" aria-required="true">Full Name</label>
+                              <input
+                              class="form-control"
+                              id="inputFirstName"
+                              type="text"
+                              placeholder="Enter your name"
+                              value="<%=user.fullname %>"
+                            />
                             </div>
-                            <!-- Form Group (email address)-->
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputEmailAddress">Email address</label
-                  >
-                  <input
-                    class="form-control"
-                    id="inputEmailAddress"
-                    type="email"
-                    placeholder="Enter your email address"
-                    value="<%=user.email %>"
-                  />
-                </div>
-                <!-- Form Row-->
-                <div class="row gx-3 mb-3">
-                  <!-- Form Group (phone number)-->
-                  <div class="col-md-6">
-                    <label class="small mb-1" for="inputPhone"
-                      >Phone number</label
-                    >
-                    <input
-                      class="form-control"
-                      id="inputPhone"
-                      type="tel"
-                      placeholder="Enter your phone number"
-                      name="contact"
-                      value="<%=userDetails.contact %>"
-                    />
-                  </div>
-                  <!-- Form Group (Birthday)-->
-                  <div class="col-md-6">
-                    <label class="small mb-1" for="inputStudentId"
-                      >Student Id</label
-                    >
-                    <input
-                      class="form-control"
-                      id="inputStudentId"
-                      type="text"
-                      name="studentId"
-                      placeholder="Enter Student id"
-                      value="<%=user.studentid %> "
-                    />
-                  </div>
-                </div>
-
-                <!-- Form Row-->
-                <div class="row gx-3 mb-3">
-                  <!-- Form Group (Gender)-->
-                  <div class="col-md-6">
-                    <label class="small mb-1" for="inputGender">Gender</label>
-                                <input class="form-control" id="inputGender" type="text" placeholder="Female / Male / Other" name="gender" value="<%=userDetails.gender %> " />
-                            </div>
-                            <!-- Form Group (score)-->
+                          </div>
+                            <!-- Form Row -->
+                          <div class="row gx-3 mb-3">
+                              <!-- Form Group (Branch)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputScore">Average GPA</label
-                    >
-                    <input
-                      class="form-control"
-                      id="inputScore"
-                      type="text"
-                      name="avgGpa"
-                      placeholder="Avg GPA"
-                      value="<%=userDetails.avgGpa %>"
-                    />
-                  </div>
-                </div>
+                              <label class="small mb-1" for="inputOrgName">Branch</label>
+                                    <!-- <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your branch name" name="branch" value="<%= userDetails.branch%> " /> -->
+                              <select class="form-control" id="inputOrgName" type="text" placeholder="Enter your branch name" name="branch" value="<%= userDetails.branch%>">
+                                <option value="Computer Engineering">Computer Engineering</option>
+                                <option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Other">Other</option>
+                              </select>
+                            </div>
+                                <!-- Form Group (Graduation year)-->
+                            <div class="col-md-6">
+                              <label class="small mb-1" for="inputLocation">Year of graduation</label>
+                                    <!-- <input class="form-control" id="inputLocation" type="text" placeholder="Enter your graduating year" name="yearOfGraduation" value="<%=userDetails.yearOfGraduation %> " /> -->
+                                <select class="form-control" id="inputLocation" name="yearOfGraduation" placeholder="Enter your graduating year" value="<%=userDetails.yearOfGraduation %>" >
+                                  <option value="2022">2022</option>
+                                  <option value="2023">2023</option>
+                                  <option value="2024">2024</option>
+                                  <option value="2025">2025</option>
+                                </select>
+                            </div>
 
-                <!-- Form Group (Resumé Link)-->
-                <div class="mb-3">
-                  <label class="small mb-1" for="inputResume"
-                    >Resumé Link</label
-                  >
-                  <input
-                    class="form-control"
-                    id="inputResume"
-                    type="text"
-                    placeholder="Enter your Resumé Link"
-                    name="resume"
-                    value="<%=userDetails.resume %>"
-                  />
-                </div>
+                          </div>
+                            <!-- Form Group (email address)-->
+                          <div class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                            <input
+                              class="form-control"
+                              id="inputEmailAddress"
+                              type="email"
+                              placeholder="Enter your email address"
+                              value="<%=user.email %>"
+                            />
+                          </div>
+                          <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (phone number)-->
+                          <div class="col-md-6">
+                            <label class="small mb-1" for="inputPhone">Phone number</label>
+                            <input
+                              class="form-control"
+                              id="inputPhone"
+                              type="tel"
+                              placeholder="Enter your phone number"
+                              name="contact"
+                              value="<%=userDetails.contact %>"
+                            />
+                          </div>
+                            <!-- Form Group (Student ID)-->
+                          <div class="col-md-6">
+                            <label class="small mb-1" for="inputStudentId">Student Id</label>
+                            <input
+                              class="form-control"
+                              id="inputStudentId"
+                              type="text"
+                              name="studentId"
+                              placeholder="Enter Student id"
+                              value="<%=user.studentid %> "
+                            />
+                          </div>
+                        </div>
 
-                <div class="mb-3">
-                  <label class="small mb-1" for="inputAddress"
-                    >Address</label
-                  >
-                  <input
-                    class="form-control"
-                    id="inputAddress"
-                    type="text"
-                    placeholder="Enter your permanent address"
-                    name="address"
-                    value="<%=userDetails.address %>"
-                  />
-                </div>
+                          <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (Gender)-->
+                          <div class="col-md-6">
+                            <label class="small mb-1" for="inputGender">Gender</label>
+                      <!-- <input class="form-control" id="inputGender" type="text" placeholder="Female / Male / Other" name="gender" value="<%=userDetails.gender %> " /> -->
+                            <select class="form-control" id="inputGender" name="gender" value="<%=userDetails.gender%>">
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                            <!-- Form Group (score)-->
+                          <div class="col-md-6">
+                            <label class="small mb-1" for="inputScore">Average GPA</label>
+                            <input
+                              class="form-control"
+                              id="inputScore"
+                              type="number"
+                              min="0"
+                              max="10"
+                              step="0.01"
+                              name="avgGpa"
+                              placeholder="Avg GPA"
+                              value="<%=userDetails.avgGpa %>"
+                            />
+                          </div>
+                        </div>
+
+                            <!-- Form Group (Resumé Link)-->
+                          <div class="mb-3">
+                            <label class="small mb-1" for="inputResume">Resume Link</label>
+                            <input
+                              class="form-control"
+                              id="inputResume"
+                              type="url"
+                              pattern="https://.*"
+                              placeholder="Enter your Resumé Link"
+                              name="resume"
+                              value="<%=userDetails.resume %>"
+                            />
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="small mb-1" for="inputAddress">Address</label>
+                            <input
+                              class="form-control"
+                              id="inputAddress"
+                              type="text"
+                              placeholder="Enter your permanent address"
+                              name="address"
+                              value="<%=userDetails.address %>"
+                            />
+                          </div>
 
                 <!-- Save changes button-->
                 <button class="btn btn-primary" type="submit">
