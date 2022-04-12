@@ -13,8 +13,8 @@ let addDetails = (data) => {
             avgGpa: data.avgGpa,
             resume: data.resume
         };
-        console.log("user details");
-        console.log(userDetails);
+        // console.log("user details");
+        // console.log(userDetails);
         DBConnection.query(
             "SELECT * FROM userdetails WHERE id = ?", [data.id],
             function (err, rows) {

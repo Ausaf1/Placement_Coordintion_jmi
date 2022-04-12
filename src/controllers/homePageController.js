@@ -1,5 +1,5 @@
 import DBConnection from "../configs/DBConnection";
-import homePageService from "../services/homePageService";
+import multer from "multer";
 
 let handleHelloWorld = async (req, res) => {
     DBConnection.query("SELECT * FROM userdetails WHERE id = ?", [req.user.id], (err, rows) => {
@@ -23,25 +23,48 @@ let handleHelloWorld = async (req, res) => {
     });
 };
 
-// let uploadImage = async (req, res) => {
-//     let image = await homePageService.handleUpload(req);
-//     let images = {
-//         id: req.user.id,
-//         image: image.filename
-//     };
-//     try {
-//         await homePageService.addImage(images);
-//         return res.redirect("/homepage");
-//     } catch (err) {
-//         req.flash("errors", err);
-//         return res.redirect("/homepage");
-//     }
-// };
+let storage = multer.diskStorage({
+    destination: (req, file, callBack) => {
+        console.log("file in destination", file);
+        // console.log(file);
+        callBack(null, '/public/images');
+    },
+    filename: (req, file, callBack) => {
+        console.log("file");
+        callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+})
+
+let upload = multer({ storage: storage });
+
+let uploadImage = async (req, res) => {
+    console.log("file in uploadImage", req.file);
+    upload.single('image'), (req, res) => {
+        if (!req.file) {
+            console.log("No file upload");
+        } else {
+            console.log(req.file.filename)
+            var imgsrc = 'http://127.0.0.1:8080/images/' + req.file.filename
+            console.log(imgsrc);
+            DBConnection.query("UPDATE images SET image = ? WHERE id = ?", [imgsrc, req.user.id], (err, rows) => {
+                if (err) {
+                    console.log(err);
+                }
+                console.log("Rows");
+                console.log(rows);
+                return res.redirect("/homepage");
+            }
+            );
+        }
+    }
+};
+
 
 
 
 
 module.exports = {
     handleHelloWorld: handleHelloWorld,
-    // uploadImage: uploadImage
+    uploadImage: uploadImage
+    // handleMulterError: handleMulterError
 };

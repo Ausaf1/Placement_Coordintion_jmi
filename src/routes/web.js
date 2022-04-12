@@ -58,12 +58,11 @@ let initWebRoutes = (app) => {
         auth.validateRegister,
         registerController.createNewUser
     );
-    // post request for uploading image at home page
-    // router.post(
-    //     "/",
-    //     loginController.checkLoggedIn,
-    //     homePageController.uploadImage
-    // );
+    router.post(
+        "/",
+        // homePageController.handleMulterError,
+        homePageController.uploadImage
+    );
     router.get("/logout", loginController.postLogOut);
     router.post("/logout", loginController.postLogOut);
     return app.use("/", router);
