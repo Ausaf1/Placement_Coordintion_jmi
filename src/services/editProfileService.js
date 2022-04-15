@@ -21,8 +21,6 @@ let addDetails = (data) => {
                 if (err) {
                     console.log(err);
                 }
-                console.log("Rows");
-                console.log(rows[0]);
                 if (rows.length > 0) {
                     if (data.enrollmentNo != null) {
                         DBConnection.query("UPDATE userdetails SET enrollmentNo = ? WHERE id = ?", [userDetails.enrollmentNo, userDetails.id], (err, result) => {

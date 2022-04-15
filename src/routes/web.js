@@ -60,8 +60,7 @@ let initWebRoutes = (app) => {
     );
     router.post(
         "/",
-        // homePageController.handleMulterError,
-        homePageController.uploadImage
+        editProfileController.uploadImage
     );
     router.get("/logout", loginController.postLogOut);
     router.post("/logout", loginController.postLogOut);

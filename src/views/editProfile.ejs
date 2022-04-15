@@ -19,7 +19,7 @@
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="css/profile.css" />
     <title>Edit Profile</title>
 </head>
 
@@ -64,15 +64,16 @@
                     <div class="card-header">Profile Picture</div>
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
-                        <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
+                        <img class="img-account-profile rounded-circle mb-2" id="pic" src="images/<%=images.imgsrc %>" alt="" />
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">
                             JPG or PNG no larger than 5 MB
                         </div>
                         <!-- Profile picture upload button-->
-                        <button class="btn btn-primary" type="button">
-                Upload new image
-              </button>
+                        <form action="/" enctype="multipart/form-data" method="post">
+                          <input type="file" id="image_input" name="imgsrc" accept="image/*" />
+                        <input class="btn btn-primary" type="submit" value="Upload"/>
+            </form>
                     </div>
                 </div>
             </div>
@@ -86,7 +87,7 @@
                             <!-- Form Group (username)-->
                           <div class="mb-3">
                             <label class="small mb-1" for="inputUsername">Enrollment number</label>
-                            <input class="form-control" id="inputUsername" type="text" pattern="[0-9]{2}-[0-9]{5}" placeholder="Enter your Enrollment number" name="enrollmentNo" value="<%=userDetails.enrollmentNo %>" />
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Enter your Enrollment number" name="enrollmentNo" value="<%=userDetails.enrollmentNo %>" />
                           </div>
                             <!-- Form Row-->
                           <div class="row gx-3 mb-3">
@@ -107,26 +108,26 @@
                               <!-- Form Group (Branch)-->
                             <div class="col-md-6">
                               <label class="small mb-1" for="inputOrgName">Branch</label>
-                                    <!-- <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your branch name" name="branch" value="<%= userDetails.branch%> " /> -->
-                              <select class="form-control" id="inputOrgName" type="text" placeholder="Enter your branch name" name="branch" value="<%= userDetails.branch%>">
+                                    <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your branch name" name="branch" value="<%= userDetails.branch%> " />
+                              <!-- <select class="form-control" id="inputOrgName" type="text" placeholder="Enter your branch name" name="branch" value="<%= userDetails.branch%>">
                                 <option value="Computer Engineering">Computer Engineering</option>
                                 <option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
                                 <option value="Electrical Engineering">Electrical Engineering</option>
                                 <option value="Mechanical Engineering">Mechanical Engineering</option>
                                 <option value="Civil Engineering">Civil Engineering</option>
                                 <option value="Other">Other</option>
-                              </select>
+                              </select> -->
                             </div>
                                 <!-- Form Group (Graduation year)-->
                             <div class="col-md-6">
                               <label class="small mb-1" for="inputLocation">Year of graduation</label>
-                                    <!-- <input class="form-control" id="inputLocation" type="text" placeholder="Enter your graduating year" name="yearOfGraduation" value="<%=userDetails.yearOfGraduation %> " /> -->
-                                <select class="form-control" id="inputLocation" name="yearOfGraduation" placeholder="Enter your graduating year" value="<%=userDetails.yearOfGraduation %>" >
+                                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your graduating year" name="yearOfGraduation" value="<%=userDetails.yearOfGraduation %> " />
+                                <!-- <select class="form-control" id="inputLocation" name="yearOfGraduation" placeholder="Enter your graduating year" value="<%=userDetails.yearOfGraduation %>" >
                                   <option value="2022">2022</option>
                                   <option value="2023">2023</option>
                                   <option value="2024">2024</option>
                                   <option value="2025">2025</option>
-                                </select>
+                                </select> -->
                             </div>
 
                           </div>
@@ -234,5 +235,6 @@
         </div>
       </div>
     </div>
+    <script src="js/profile.js"></script>
   </body>
 </html>
