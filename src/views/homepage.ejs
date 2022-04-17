@@ -39,11 +39,10 @@
           name="avatar"
           required
         /> -->
-        <form action="/" enctype="multipart/form-data" method="post">
-          <div id="pic"></div>
-          <input type="file" id="image_input" name="image" accept="image/*" />
-          <input type="submit" value="Upload" />
-        </form>
+        <div
+          id="pic"
+          style="background-image: url('images/<%=images.imgsrc %>')"
+        ></div>
         <hr />
         <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -120,7 +119,5 @@
         </div>
       </div>
     </div>
-
-    <script src="js/profile.js"></script>
   </body>
 </html>
