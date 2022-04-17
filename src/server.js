@@ -7,7 +7,8 @@ import cookieParser from 'cookie-parser';
 import session from "express-session";
 import connectFlash from "connect-flash";
 import passport from "passport";
-import multer from "multer";
+import fileUpload from "express-fileupload";
+// import multer from "multer";
 
 let app = express();
 
@@ -38,6 +39,8 @@ app.use(connectFlash());
 //Config passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(fileUpload());
 
 
 
