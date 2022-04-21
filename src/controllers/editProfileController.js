@@ -36,7 +36,7 @@ let editProfile = async (req, res) => {
                 return res.render("editProfile.ejs", {
                     user: req.user,
                     userDetails: {},
-                    imgsrc: ""
+                    images: ""
                 });
             }
         });
@@ -45,7 +45,7 @@ let editProfile = async (req, res) => {
 
 let editProfileUser = async (req, res) => {
     // console.log("jggdfd");
-    console.log(req.body);
+    // console.log(req.body);
     let userDetails = {
         id: req.user.id,
         enrollmentNo: req.body.enrollmentNo,

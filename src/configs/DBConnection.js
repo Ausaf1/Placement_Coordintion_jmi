@@ -26,6 +26,15 @@ connection.query("CREATE TABLE IF NOT EXISTS images (id int NOT NULL,imgsrc varc
     }
 });
 
+connection.query("CREATE TABLE IF NOT EXISTS companies (`companyId` INT NOT NULL AUTO_INCREMENT,`companyName` VARCHAR(255) NOT NULL,`applicationStatus` VARCHAR(45) NOT NULL,`time` TIME NOT NULL,PRIMARY KEY (`companyId`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;", (err, result) => {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log("Table created");
+    }
+});
+
 
 
 
