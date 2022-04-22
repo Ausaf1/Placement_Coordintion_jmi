@@ -8,7 +8,6 @@ import session from "express-session";
 import connectFlash from "connect-flash";
 import passport from "passport";
 import fileUpload from "express-fileupload";
-// import multer from "multer";
 
 let app = express();
 

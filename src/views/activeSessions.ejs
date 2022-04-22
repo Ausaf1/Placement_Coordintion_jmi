@@ -55,39 +55,18 @@
       <h1 class="title">ACTIVE SESSIONS</h1>
     </div>
     <div class="list-group">
+      <%for(var i=0;i<companies.length;i++){%>
       <a href="/apply" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-        <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
         <div class="d-flex gap-2 w-100 justify-content-between">
           <div>
-            <h6 class="mb-0">Company 1</h6>
+            <h6 class="mb-0"><%=companies[i].companyName %>  </h6>
             <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-            <p>Application Status: </p>
+            <p>Application Status: <%=companies[i].applicationStatus %>  </p>
           </div>
-          <small class="opacity-50 text-nowrap">now</small>
+          <small class="opacity-50 text-nowrap"><%=companies[i].time %> </small>
         </div>
       </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-        <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
-        <div class="d-flex gap-2 w-100 justify-content-between">
-          <div>
-            <h6 class="mb-0">Company 2</h6>
-            <p class="mb-0 opacity-75">Some placeholder content in a paragraph that goes a little longer so it wraps to a new line.</p>
-            <p>Application Status: </p>
-          </div>
-          <small class="opacity-50 text-nowrap">3d</small>
-        </div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-        <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
-        <div class="d-flex gap-2 w-100 justify-content-between">
-          <div>
-            <h6 class="mb-0">Company 3</h6>
-            <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-            <p>Application Status: </p>
-          </div>
-          <small class="opacity-50 text-nowrap">1w</small>
-        </div>
-      </a>
+      <%}%>
     </div>
 
     <div class="offers">
