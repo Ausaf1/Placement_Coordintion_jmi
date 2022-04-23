@@ -55,7 +55,7 @@
       <h1 class="title">ACTIVE SESSIONS</h1>
     </div>
     
-    <% if(companies == "") { %>
+    <% if(jobs == "") { %>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -69,27 +69,33 @@
     <% } else { %>
 
       <div class="list-group">
-        <% companies.forEach((company) => { %>
-        <!-- <a href="/company/<%= company.id %>" class="list-group-item list-group-item-action flex-column align-items-start">
+        <% jobs.forEach((job) => { %>
+          
+        <!-- <a href="/job/<%= job.id %>" class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1"><%= company.companyName %></h5>
+            <h5 class="mb-1"><%= job.jobName %></h5>
             <small>India</small>
           </div>
-          <p class="mb-1">Company descption</p>
+          <p class="mb-1">job descption</p>
           <small>period</small>
         </a> -->
           <br>
           <a href="/apply" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-            <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">  -->
+            <img src="<%= job.logo_link %>" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> 
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>
-                <h6 class="mb-0"><%= company.companyName %> </h6>
-                <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-                <p>Application Status: <%= company.applicationStatus %> </p>
+                <h6 class="mb-0"><%= job.title %> </h6>
+                <p class="mb-0 opacity-75"><%=job.company%></p>
+                <% if (job.applied == true) { %>
+                  <p class="mb-0 opacity-75">Applied</p>
+                <% } else { %>
+                  <p class="mb-0 opacity-75">Not Applied</p>
+                <% } %>  
               </div>
-              <small class="opacity-50 text-nowrap"><%= company.time %> </small>
+              <small class="opacity-50 text-nowrap"><%= job.location %> </small>
             </div>
           </a>
+
   
          <% }) %>
       </div>
