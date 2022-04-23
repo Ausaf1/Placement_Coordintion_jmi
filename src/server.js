@@ -1,7 +1,7 @@
 require('dotenv').config();
-import express from "express";
-import configViewEngine from "./configs/viewEngine";
-import initWebRoutes from "./routes/web";
+import express from "express";  // express is used for routing pages
+import configViewEngine from "./configs/viewEngine"; // view engine for ejs
+import initWebRoutes from "./routes/web"; 
 import bodyParser from "body-parser";
 import cookieParser from 'cookie-parser';
 import session from "express-session";
@@ -48,4 +48,5 @@ app.use(fileUpload());
 initWebRoutes(app);
 
 let port = process.env.PORT || 8080;
+console.log('Hello from server.js!');
 app.listen(port, () => console.log(`Server is running on port ${port}!`));

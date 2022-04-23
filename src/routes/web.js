@@ -16,19 +16,24 @@ initPassportLocal();
 let router = express.Router();
 
 let initWebRoutes = (app) => {
-    router.get("/login", loginController.getPageLogin);
-    router.get(
-        "/",
-        loginController.checkLoggedIn,
-        homePageController.handleHelloWorld
-    );
+    //langing page route
     router.get(
         "/landingPage",
         loginController.checkLoggedOut,
         landingPageController.landingPage
     );
+    
+    //register page route
+    router.get("/register", registerController.getPageRegister);
     router.post(
-        "/login",
+        "/register",
+        auth.validateRegister,
+        registerController.createNewUser
+    );
+    
+    //login page route
+    router.get("/login", loginController.getPageLogin);
+    router.post("/login",
         passport.authenticate("local", {
             successRedirect: "/",
             failureRedirect: "/login",
@@ -36,34 +41,44 @@ let initWebRoutes = (app) => {
             failureFlash: true,
         })
     );
-    router.get("/active", activeController.activeSessions);
+    
+    // logout route
+    router.get("/logout", loginController.postLogOut);
+    router.post("/logout", loginController.postLogOut);
+    
+    //profile homepage route
+    router.get(
+        "/",
+        loginController.checkLoggedIn,
+        homePageController.handleHelloWorld
+    );
+
+    //edit profile page route
+    router.get(
+        "/editProfile",
+        loginController.checkLoggedIn,
+        editProfileController.editProfile
+    );
+    router.post(
+        "/editProfile", 
+        editProfileController.editProfileUser);    
+    router.post(
+        "/",
+        editProfileController.uploadImage
+    );
+
+    //router.get("/active", activeController.activeSessions);
+    //active sessions page
     router.get(
         "/active",
         loginController.checkLoggedIn,
         activeController.activeSessions
     );
 
+    //apply page route
     router.get("/apply", applyController.apply);
 
-    router.get(
-        "/editProfile",
-        loginController.checkLoggedIn,
-        editProfileController.editProfile
-    );
-    router.post("/editProfile", editProfileController.editProfileUser);
-
-    router.get("/register", registerController.getPageRegister);
-    router.post(
-        "/register",
-        auth.validateRegister,
-        registerController.createNewUser
-    );
-    router.post(
-        "/",
-        editProfileController.uploadImage
-    );
-    router.get("/logout", loginController.postLogOut);
-    router.post("/logout", loginController.postLogOut);
     return app.use("/", router);
 };
+
 module.exports = initWebRoutes;

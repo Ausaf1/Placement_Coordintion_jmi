@@ -54,41 +54,46 @@
     <div class="top">
       <h1 class="title">ACTIVE SESSIONS</h1>
     </div>
-    <div class="list-group">
-      <a href="/apply" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-        <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
-        <div class="d-flex gap-2 w-100 justify-content-between">
-          <div>
-            <h6 class="mb-0">Company 1</h6>
-            <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-            <p>Application Status: </p>
+    
+    <% if(companies == "") { %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">No Active Sessions</h4>
+            <p>There are no active sessions at the moment. Please check back later.</p>
           </div>
-          <small class="opacity-50 text-nowrap">now</small>
         </div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-        <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
-        <div class="d-flex gap-2 w-100 justify-content-between">
-          <div>
-            <h6 class="mb-0">Company 2</h6>
-            <p class="mb-0 opacity-75">Some placeholder content in a paragraph that goes a little longer so it wraps to a new line.</p>
-            <p>Application Status: </p>
-          </div>
-          <small class="opacity-50 text-nowrap">3d</small>
-        </div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-        <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
-        <div class="d-flex gap-2 w-100 justify-content-between">
-          <div>
-            <h6 class="mb-0">Company 3</h6>
-            <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-            <p>Application Status: </p>
-          </div>
-          <small class="opacity-50 text-nowrap">1w</small>
-        </div>
-      </a>
+      </div>
     </div>
+    <% } else { %>
+
+      <div class="list-group">
+        <% companies.forEach((company) => { %>
+        <!-- <a href="/company/<%= company.id %>" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"><%= company.companyName %></h5>
+            <small>India</small>
+          </div>
+          <p class="mb-1">Company descption</p>
+          <small>period</small>
+        </a> -->
+          <br>
+          <a href="/apply" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">  -->
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0"><%= company.companyName %> </h6>
+                <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
+                <p>Application Status: <%= company.applicationStatus %> </p>
+              </div>
+              <small class="opacity-50 text-nowrap"><%= company.time %> </small>
+            </div>
+          </a>
+  
+         <% }) %>
+      </div>
+    <% } %>
 
     <div class="offers">
       <button class="btn btn-success">
