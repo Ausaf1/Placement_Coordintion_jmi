@@ -1,5 +1,5 @@
 let apply = async (req, res) => {
-    return res.render("apply.ejs", {
+    return res.render("apply.ejs", {user: req.user
     });
 }
 

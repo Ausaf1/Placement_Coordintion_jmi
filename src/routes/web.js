@@ -6,6 +6,7 @@ import landingPageController from "../controllers/landingPageController";
 import activeController from "../controllers/activeController";
 import editProfileController from "../controllers/editProfileController";
 import applyController from "../controllers/applyController";
+import roundsController from "../controllers/roundController";
 import auth from "../validation/authValidation";
 import passport from "passport";
 import initPassportLocal from "../controllers/passportLocalController";
@@ -75,8 +76,14 @@ let initWebRoutes = (app) => {
         activeController.activeSessions
     );
 
+    router.post("/active", activeController.checkApplied);
+
     //apply page route
     router.get("/apply", applyController.apply);
+
+    //rounds page route
+    router.get("/rounds", roundsController.round);
+
 
     return app.use("/", router);
 };
