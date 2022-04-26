@@ -48,8 +48,8 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">UNIVERSITY PLACEMENT CELL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto ">
                     <li class="nav-item">
@@ -80,9 +80,11 @@
         <h2>Account</h2>
 
         <button class="google-signup">
-        <i class="fab fa-google"></i> Create account using Google
-      </button>
+            <i class="fab fa-google"></i> Create account using Google
+        </button>
+
         <p>OR</p>
+        
         <form action="/register" name="candidate-form" method="post">
             <input type="fullname" id="fullname" name="fullname" placeholder="Full Name" required />
             <input type="studentid" id="studentid" name="studentid" placeholder="Jamia Student id" required />
@@ -93,8 +95,8 @@
                 <% if(errors != ""){%>
                     <% errors.forEach((item)=> {%>
                         <button class="error"><%= item %></button>
-                        <% }) %>
-                            <%}%>
+                    <% }) %>
+                <%}%>
             </div>
             <input class="next" type="submit" value="Next" />
         </form>

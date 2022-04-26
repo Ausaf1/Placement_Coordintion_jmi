@@ -1,80 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forms Page</title>
-    <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/apply.css" />
-
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Open+Sans:wght@700&family=Quicksand&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <h2>Forms Page</h2>
-    <button class="accordion">Company 1</button>
-    <div class="panel">
-      <p>Link to form1</p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      </p>
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <title>Application Form</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">UNIVERSITY PLACEMENT CELL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto ">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/active">Active Sessions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/apply">Apply</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/login">Logout</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
+</nav>
+    <div class="container mt-5">
+        <h1>Application Form</h1>
+        <form action="" class="row g-3">
+            <div class="col-md-8">
+                <label for="Name" class="form-label">Name</label>
+                <input type="text" value="<%=user.fullname %> " class="form-control" id="Name" required>
+            </div>
+            <!-- <div class="col-md-4">
+                <label for="middleName" class="form-label">Middle Name</label>
+                <input type="text" class="form-control" id="middleName" required>
+            </div>
+            <div class="col-md-4">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" required>
+            </div> -->
+            <div class="col-md-8">
+                <label for="emailInfo" class="form-label">Email ID</label>
+                <input type="email" value="<%=user.email %> " class="form-control" id="emailInfo" required>
+            </div>
+            <div class="col-md-4">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="text"  class="form-control" id="phoneNumber" placeholder="+91 1234567890" required>
+            </div>
+            <div class="col-md-4">
+                <label for="gender" class="form-label">Gender</label>
+                <select id="gender" class="form-control">
+                    <option value="" selected disabled hidden>--Choose--</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="nationality" class="form-label">Nationality</label>
+                <input type="text" class="form-control" id="nationality">
+            </div>
+            <div class="col-md-12">
+                <label for="address" class="form-label">Permanent Address</label>
+                <input type="text" class="form-control" id="address" required>
+            </div>
+            
+            <hr>
 
-    <button class="accordion">Company 2</button>
-    <div class="panel">
-      <p>Link to form2</p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      </p>
+            <div class="col-md-8">
+                <label for="course" class="form-label">Course</label>
+                <input type="text" class="form-control" id="course" required>
+            </div>
+            <div class="col-md-4">
+                <label for="yearGraduation" class="form-label">Year of Graduation</label>
+                <input type="text" class="form-control" id="yearGraduation" required>
+            </div>
+            <div class="col-md-6">
+                <label for="department" class="form-label">Department</label>
+                <input type="text" class="form-control" id="department" required>
+            </div>
+            <div class="col-md-6">
+                <label for="faculty" class="form-label">Faculty</label>
+                <input type="text" class="form-control" id="faculty" required>
+            </div>
+            <div class="col-md-4">
+                <label for="cpi" class="form-label">CPI</label>
+                <input type="text" class="form-control" id="cpi" required>
+            </div>
+            <div class="col-md-8">
+                <label for="resume" class="form-label">resume</label>
+                <input type="url" class="form-control" id="faculty" required>
+            </div>
+        </form>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <button class="btn btn-primary btn-block">Submit</button>
+            </div>
+        </div>
     </div>
-
-    <button class="accordion">Company 3</button>
-    <div class="panel">
-      <p>Link to form3</p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      </p>
-    </div>
-
-    <script>
-      var acc = document.getElementsByClassName("accordion");
-      var i;
-
-      for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-          this.classList.toggle("active");
-          var panel = this.nextElementSibling;
-          if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-          } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-          }
-        });
-      }
-    </script>
-  </body>
+</body>
 </html>
