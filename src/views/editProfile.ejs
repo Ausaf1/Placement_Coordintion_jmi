@@ -30,10 +30,13 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
+              <div class="logo">
+                <img src="images/JMI logo.jpeg" alt="jamia_logo" />
+              </div>
                 <a class="navbar-brand" href="#">UNIVERSITY PLACEMENT CELL</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto ">
                         <li class="nav-item">
@@ -64,7 +67,7 @@
                     <div class="card-header">Profile Picture</div>
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
-                        <img class="img-account-profile rounded-circle mb-2" id="pic" src="images/<%=images.imgsrc %>" alt="" />
+                        <img class="img-account-profile rounded-circle mb-3" id="pic" src="images/<%=images.imgsrc %>" alt="" />
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">
                             JPG or PNG no larger than 5 MB
@@ -72,7 +75,7 @@
                         <!-- Profile picture upload button-->
                         <form action="/" enctype="multipart/form-data" method="post">
                           <input type="file" id="image_input" name="imgsrc" accept="image/*" />
-                        <input class="btn btn-primary" type="submit" value="Upload"/>
+                        <input class="upload-btn btn btn-primary" type="submit" value="Upload"/>
             </form>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/homepage.css" />
     <title>Profile page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -15,9 +15,12 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav1">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">UNIVERSITY PLACEMENT CELL</a>
+        <div class="logo me-3">
+          <img src="images/JMI logo.jpeg" alt="jamia_logo" />
+        </div>
+          <a class="navbar-brand me-lg-auto order-lg-0" href="#">UNIVERSITY PLACEMENT CELL</a>
         <div id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
@@ -30,7 +33,7 @@
 
     <div class="main">
       <div
-        class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark position-sticky col-md-3 col-lg-2 col-sm-12 sidebar collapse menu2"
+        class="d-flex flex-column flex-shrink-0 p-2 text-white bg-dark position-sticky col-md-3 col-lg-2 col-sm-12 sidebar collapse menu2"
       >
         <!-- <input
           type="file"
@@ -106,9 +109,9 @@
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="2">
+                <td colspan="3">
                   <div class="col-sm-12">
-                    <a href="/editProfile" class="btnedit" target="__blank"
+                    <a href="/editProfile" class="btnedit"
                       >Edit</a
                     >
                   </div>

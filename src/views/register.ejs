@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- Stylesheet -->
     <!-- Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/candidate_signup.css" />
+    <link rel="stylesheet" type="text/css" href="css/register.css" />
 
     <!-- fontAwesome glyphs -->
     <script src="https://kit.fontawesome.com/bcb014635f.js" crossorigin="anonymous"></script>
@@ -46,10 +46,13 @@
     </nav> -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
+            <div class="logo">
+                <img src="images/JMI logo.jpeg" alt="jamia_logo" />
+            </div>
             <a class="navbar-brand" href="#">UNIVERSITY PLACEMENT CELL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto ">
                     <li class="nav-item">
@@ -77,18 +80,17 @@
     <div class="main">
         <h1 class="heading">Create New Account</h1>
         <hr />
-        <h2>Account</h2>
 
         <button class="google-signup">
         <i class="fab fa-google"></i> Create account using Google
       </button>
         <p>OR</p>
         <form action="/register" name="candidate-form" method="post">
-            <input type="fullname" id="fullname" name="fullname" placeholder="Full Name" required />
-            <input type="studentid" id="studentid" name="studentid" placeholder="Jamia Student id" required />
+            <input type="text" id="fullname" name="fullname" placeholder="&#xf007;  Full Name" required />
+            <input type="number" min="200000000" max="209999999" id="studentid" name="studentid" placeholder="&#xf2c1;  Jamia Student ID" required />
             <input type="email" id="email" name="email" placeholder="&#xf0e0;  Email" required />
             <input type="password" id="password" name="password" placeholder="&#xf023;  Password" required />
-            <input type="password" name="passwordConfirmation" placeholder="&#xf3ed;  Confirm Password" required />
+            <input type="password" name="passwordConfirmation" placeholder="&#xf3ed; Confirm Password" required />
             <div>
                 <% if(errors != ""){%>
                     <% errors.forEach((item)=> {%>

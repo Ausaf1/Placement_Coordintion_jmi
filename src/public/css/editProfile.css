@@ -5,11 +5,12 @@ body {
 }
 
 .img-account-profile {
-    height: 10rem;
+    height: 12rem;
+    width: 10rem;
 }
 
 .rounded-circle {
-    border-radius: 50% !important;
+    border-radius: 1rem !important;
 }
 
 .card {
@@ -72,15 +73,14 @@ body {
 /* Personalised css */
 
 .logo {
-    height: 4rem;
-    width: 4rem;
-    margin: 10px 10px;
+    margin-left: 1%;
+    margin-right: 1.5%;
 }
-
+  
 .logo img {
-    height: 3.5rem;
-    width: 3.5rem;
-    margin: 3px;
+    height: 60px;
+    width: 60px;
+    border-radius: 2rem;
 }
 
 #navbar {
@@ -145,4 +145,10 @@ div.name .webname {
 
 #navbar ul li a:hover:after {
     width: 100%;
+}
+
+@media (min-width: 1200px){
+    .upload-btn {
+        margin-top: 2%;
+    }
 }
