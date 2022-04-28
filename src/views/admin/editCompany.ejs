@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Company details</title>
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/activeSessions.css" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Open+Sans:wght@700&family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/editDetails.css" />
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container-fluid px-1 py-5 mx-auto">
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+          <h3>Edit Company Details</h3>
+
+          <div class="card">
+            <form class="form-card" method="POST" action="/update-company/<%= company.company_id %>">
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                    >Company ID<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    id="fname"
+                    name="company_id"
+                    placeholder="Enter your first name"
+                    value="<%= company.company_id %>"
+                  />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                    >Name<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    id="lname"
+                    name="name"
+                    placeholder="Enter company name"
+                    value="<%= company.name %>"
+                  />
+                </div>
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                    >Descption<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    id="lname"
+                    name="description"
+                    placeholder="Enter company description"
+                    value="<%= company.description %>"
+                  />
+                </div>
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                    >Logo Link<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    id="lname"
+                    name="logo_link"
+                    placeholder="Enter logo link"
+                    value="<%= company.logo_link %>"
+                  />
+                </div>
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                    >Web Link<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    id="lname"
+                    name="web_link"
+                    placeholder="Enter company name"
+                    value="<%= company.web_link %>"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-end">
+                <div class="form-group col-sm-6">
+                  <button type="submit" class="btn-block btn-primary">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
