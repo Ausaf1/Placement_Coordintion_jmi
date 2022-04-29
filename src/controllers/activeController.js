@@ -1,8 +1,5 @@
 import DBConnection from "../configs/DBConnection";
 
-
-
-
 let activeSessions = async (req, res) => {
     //console.log('req.user: ', req.user);
     DBConnection.query("select j.job_id, c.name 'company', c.logo_link, j.title, j.location from jobs j, companies c where j.company_id = c.company_id order by j.package desc", (err, rows) => {
@@ -54,11 +51,11 @@ let activeSessions = async (req, res) => {
 
 let checkApplied = async (req, res) => {
     //console.log('req.user: ', req.user);
-
+    let job_id = req.params.id;
     console.log("checking applied response: ", req.body.appliedStatus);
     if (req.body.appliedStatus === "applied") {
         console.log("redirecting for id: ", req.body.job);
-        return res.redirect("/rounds");
+        return res.redirect("/rounds/" + job_id);
     } else {
         console.log("going to apply page")
         return res.redirect("/apply");

@@ -30,6 +30,9 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
+              <div class="logo">
+                <img src="images/JMI logo.jpeg" alt="jamia_logo" />
+              </div>
                 <a class="navbar-brand" href="#">UNIVERSITY PLACEMENT CELL</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -42,9 +45,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="/active">Active Sessions</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link active" href="/apply">Apply</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link active" href="/login">Logout</i>
                             </a>
@@ -64,13 +67,15 @@
                     <div class="card-header">Profile Picture</div>
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
+                       
                         <img class="img-account-profile rounded-circle mb-2" id="pic" src="images/<%=images.imgsrc %>" alt="" />
+                      
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">
                             JPG or PNG no larger than 5 MB
                         </div>
                         <!-- Profile picture upload button-->
-                        <form action="/" enctype="multipart/form-data" method="post">
+                        <form action="/<%= user.id %>" enctype="multipart/form-data" method="post">
                           <input type="file" id="image_input" name="imgsrc" accept="image/*" />
                         <input class="btn btn-primary" type="submit" value="Upload"/>
             </form>
@@ -83,7 +88,7 @@
                 <div class="card mb-4">
                     <div class="card-header">Edit Details</div>
                     <div class="card-body">
-                        <form method="POST" action="/editProfile">
+                        <form method="POST" action="/editProfile/<%= user.id %>">
                             <!-- Form Group (username)-->
                           <div class="mb-3">
                             <label class="small mb-1" for="inputUsername">Enrollment number</label>

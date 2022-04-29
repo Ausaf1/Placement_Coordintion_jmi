@@ -7,9 +7,11 @@ import activeController from "../controllers/activeController";
 import editProfileController from "../controllers/editProfileController";
 import applyController from "../controllers/applyController";
 import roundsController from "../controllers/roundController";
+import adminController from "../controllers/adminController";
 import auth from "../validation/authValidation";
 import passport from "passport";
 import initPassportLocal from "../controllers/passportLocalController";
+import thanksController from "../controllers/thanksController";
 
 // Init all passport
 initPassportLocal();
@@ -61,10 +63,10 @@ let initWebRoutes = (app) => {
         editProfileController.editProfile
     );
     router.post(
-        "/editProfile",
+        "/editProfile/:id",
         editProfileController.editProfileUser);
     router.post(
-        "/",
+        "/:id",
         editProfileController.uploadImage
     );
 
@@ -76,14 +78,32 @@ let initWebRoutes = (app) => {
         activeController.activeSessions
     );
 
-    router.post("/active", activeController.checkApplied);
+    // router.post("/active", activeController.checkApplied);
 
     //apply page route
-    router.get("/apply", applyController.apply);
+    router.get("/apply/:id", applyController.apply);
+
+    // post for apply page
+    router.post("/apply/:id", applyController.applyJob);
+    router.get("/thanks", thanksController.thanks);
 
     //rounds page route
-    router.get("/rounds", roundsController.round);
+    router.get("/rounds/:id", roundsController.round);
 
+    // admin page routes
+
+    router.get("/admin", adminController.getPage);
+    //user table
+    router.get("/update-user/:id", adminController.getEditUser);
+    router.get("/delete-user/:id", adminController.deleteUser);
+    //company table
+    router.get("/update-company/:id", adminController.getEditCompany);
+    router.post("/update-company/:id", adminController.updateCompany);
+    router.get("/delete-company/:id", adminController.deleteCompany);
+    //job table
+    router.get("/update-job/:id", adminController.getEditJob);
+    router.post("/update-job/:id", adminController.updateJob);
+    router.get("/delete-job/:id", adminController.deleteJob);
 
     return app.use("/", router);
 };

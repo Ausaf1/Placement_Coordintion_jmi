@@ -3,7 +3,14 @@ import DBConnection from "../configs/DBConnection";
 import path from "path";
 
 let editProfile = async (req, res) => {
-    DBConnection.query("SELECT * FROM userdetails WHERE id = ?", [req.user.id],
+    var id;
+    try {
+        id = req.user.id;
+    } catch (err) {
+        console.log("catchhh")
+        id = req.params.id;
+    }
+    DBConnection.query("SELECT * FROM userdetails WHERE id = ?", [id],
         (err, userRows) => {
             if (err) {
                 console.log(err);
@@ -12,7 +19,7 @@ let editProfile = async (req, res) => {
                 console.log("userdetails: ", userRows[0]);
 
                 DBConnection.query(
-                    "SELECT * FROM images WHERE id = ?", [req.user.id],
+                    "SELECT * FROM images WHERE id = ?", [id],
                     function (err, imgRows) {
                         if (imgRows.length > 0) {
                             console.log("images: ", imgRows[0])
@@ -46,8 +53,15 @@ let editProfile = async (req, res) => {
 let editProfileUser = async (req, res) => {
     // console.log("jggdfd");
     // console.log(req.body);
+    var id;
+    try {
+        id = req.user.id;
+    } catch (err) {
+        console.log("catchhh")
+        id = req.params.id;
+    }
     let userDetails = {
-        id: req.user.id,
+        id: id,
         enrollmentNo: req.body.enrollmentNo,
         branch: req.body.branch,
         yearOfGraduation: req.body.yearOfGraduation,
@@ -79,18 +93,28 @@ let uploadImage = async (req, res) => {
     // uploadPath = __dirname + '/upload/' + imgsrc.name;
     uploadPath = path.join(__dirname, '../public/images/' + imgsrc.name);
 
+    var id;
+    try {
+        id = req.user.id;
+    } catch (err) {
+        console.log("catchhh")
+        id = req.params.id;
+    }
+
+
     console.log(imgsrc);
     let images = {
-        id: req.user.id,
+        id: id,
         imgsrc: imgsrc.name
     }
+
 
     // Use mv() to place file on the server
     imgsrc.mv(uploadPath, function (err) {
         if (err) return res.status(500).send(err);
 
         DBConnection.query(
-            "SELECT * FROM images WHERE id = ?", [req.user.id],
+            "SELECT * FROM images WHERE id = ?", [id],
             function (err, rows) {
                 if (err) {
                     console.log(err);
@@ -98,7 +122,7 @@ let uploadImage = async (req, res) => {
                 console.log("Rows");
                 console.log(rows[0]);
                 if (rows.length > 0) {
-                    DBConnection.query("UPDATE images SET imgsrc = ? WHERE id = ?", [imgsrc.name, req.user.id], (err, result) => {
+                    DBConnection.query("UPDATE images SET imgsrc = ? WHERE id = ?", [imgsrc.name, id], (err, result) => {
                         if (err) {
                             console.log(err);
                         }

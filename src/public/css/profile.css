@@ -109,6 +109,10 @@ input {
   border-radius: 2rem;
 }
 
+a.title {
+  text-align: left;
+}
+
 #pic {
   height: 35%;
   min-height: 200px;
@@ -231,6 +235,7 @@ table.table tfoot {
   font-weight: bold;
   color: #ffffff;
   border-top: 1px solid #444444;
+  margin: 2%;
   line-height: 40px;
 }
 
@@ -246,7 +251,7 @@ table.table tfoot .links a {
   display: inline-block;
   background: #1c6ea4;
   color: #ffffff;
-  padding: 1.25%;
+  padding: 1.5%;
   border-radius: 5px;
 }
 

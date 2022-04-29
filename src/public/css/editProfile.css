@@ -1,148 +1,153 @@
 body {
-    margin-top: 20px;
-    background-color: #f2f6fc;
-    color: #69707a;
+  margin-top: 20px;
+  background-color: #f2f6fc;
+  color: #69707a;
 }
 
 .img-account-profile {
-    height: 10rem;
+  height: 12rem;
+  width: 10rem;
 }
 
 .rounded-circle {
-    border-radius: 50% !important;
+  border-radius: 1rem !important;
 }
 
 .card {
-    box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+  box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
 }
 
 .card .card-header {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .card-header:first-child {
-    border-radius: 0.35rem 0.35rem 0 0;
+  border-radius: 0.35rem 0.35rem 0 0;
 }
 
 .card-header {
-    padding: 1rem 1.35rem;
-    margin-bottom: 0;
-    background-color: rgba(33, 40, 50, 0.03);
-    border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+  padding: 1rem 1.35rem;
+  margin-bottom: 0;
+  background-color: rgba(33, 40, 50, 0.03);
+  border-bottom: 1px solid rgba(33, 40, 50, 0.125);
 }
 
 .form-control,
 .dataTable-input {
-    display: block;
-    width: 100%;
-    padding: 0.875rem 1.125rem;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1;
-    color: #69707a;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #c5ccd6;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0.35rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #69707a;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c5ccd6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.35rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .nav-borders .nav-link.active {
-    color: #0061f2;
-    border-bottom-color: #0061f2;
+  color: #0061f2;
+  border-bottom-color: #0061f2;
 }
 
 .nav-borders .nav-link {
-    color: #69707a;
-    border-bottom-width: 0.125rem;
-    border-bottom-style: solid;
-    border-bottom-color: transparent;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 1rem;
-    margin-right: 1rem;
+  color: #69707a;
+  border-bottom-width: 0.125rem;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
-
 
 /* Personalised css */
 
 .logo {
-    height: 4rem;
-    width: 4rem;
-    margin: 10px 10px;
+  margin-left: 1%;
+  margin-right: 1.5%;
 }
 
 .logo img {
-    height: 3.5rem;
-    width: 3.5rem;
-    margin: 3px;
+  height: 60px;
+  width: 60px;
+  border-radius: 2rem;
 }
 
 #navbar {
-    display: flex;
-    align-items: center;
-    background-color: #1E2022;
+  display: flex;
+  align-items: center;
+  background-color: #1e2022;
 }
 
 div.name {
-    display: flex;
-    /* width: 25rem; */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    /* line-height: 28px; */
+  display: flex;
+  /* width: 25rem; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* line-height: 28px; */
 }
 
 div.name .webname {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 #navbar ul {
-    display: flex;
-    position: absolute;
-    right: 10px;
+  display: flex;
+  position: absolute;
+  right: 10px;
 }
 
 #navbar ul li {
-    list-style: none;
-    font-size: 1.3rem;
+  list-style: none;
+  font-size: 1.3rem;
 }
 
 #navbar ul li a {
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 1.5px;
-    height: 100%;
-    padding: 2px 22px;
-    border-radius: 20px;
-    text-decoration: none;
-    text-align: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1.5px;
+  height: 100%;
+  padding: 2px 22px;
+  border-radius: 20px;
+  text-decoration: none;
+  text-align: center;
 }
 
 #navbar ul li a:after {
-    content: "";
-    position: absolute;
-    background-color: orange;
-    height: 3px;
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    transition: 0.3s;
+  content: "";
+  position: absolute;
+  background-color: orange;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
 }
 
 #navbar ul li a:hover {
-    color: white;
+  color: white;
 }
 
 #navbar ul li a:hover:after {
-    width: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .upload-btn {
+    margin-top: 2%;
+  }
 }

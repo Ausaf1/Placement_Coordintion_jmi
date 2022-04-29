@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel  </title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/adminPage.css" />
+    
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <nav>
+        <div class="container">
+          <div class="text-center">
+            <a href="/" class="nav-brand text-dark">Admin Panel</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- /Header -->
+    <!-- Main Site -->
+    <main id="site-main">
+      <!-- toggle button to show nested content -->
+    
+        
+      <!-- Users form handling -->
+      <div class="container"> 
+        <h3><button id="toggle-user" class="btn btn-primary">
+          <i class="fas fa-caret-down"></i>
+        </button> Users </h3>
+        
+        <div id="user-table">
+          <form action="/" method="POST">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Student ID</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i = 0; i < users.length; i++) { %>
+                <tr>
+                  <td><%= users[i].id%></td>
+                  <td><%= users[i].fullname%></td>
+                  <td><%= users[i].email %></td>
+                  <td><%= users[i].studentid %></td>
+                  <td>
+                    <a
+                      href="/update-user/<%= users[i].id%>"
+                      class="btn border-shadow update"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-pencil-alt"></i
+                      ></span>
+                    </a>
+                    <a
+                      href="/delete-user/<%= users[i].id%>"
+                      class="btn border-shadow delete"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </a>
+                  </td>
+                </tr>
+                <% } %>
+                <tr>
+                  <td colspan="5">
+                      <a href="/register" class="btn border-shadow">
+                        <span class="text-gradient"
+                          >New User <i class="fas fa-user"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+
+      <!-- Companies form handling -->
+      <br>
+      <div class="container">
+        <h3><button id="toggle-company" class="btn btn-primary">
+          <i class="fas fa-caret-down"></i>
+        </button> Companies </h3>
+        <div id="company-table">
+          <form action="/" method="POST">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>web_link</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i = 0; i < companies.length; i++) { %>
+                <tr>
+                  <td><%= companies[i].company_id %></td>
+                  <td><%= companies[i].name %></td>
+                  <td><%= companies[i].web_link %></td>
+                  <td>
+                    <a
+                      href="/update-company/<%= companies[i].company_id%>"
+                      class="btn border-shadow update"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-pencil-alt"></i
+                      ></span>
+                    </a>
+                    <a
+                      href="/delete-company/<%= companies[i].company_id%>"
+                      class="btn border-shadow delete"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </a>
+                  </td>
+                </tr>
+                <% } %>
+                <tr>
+                  <td colspan="5">
+                      <a href="/update-company/-1" class="btn border-shadow">
+                        <span class="text-gradient"
+                          >New Company <i class="fas fa-user"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+
+      <!-- Jobs form handling -->
+      <br>
+       <div class="container">
+        <h3><button id="toggle-job" class="btn btn-primary">
+          <i class="fas fa-caret-down"></i>
+        </button> Jobs </h3>
+        <div id="job-table">
+          <form action="/" method="POST">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>Company</th>
+                  <th>Package</th>
+                  <th>Location</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i = 0; i < jobs.length; i++) { %>
+                <tr>
+                  <td><%= jobs[i].job_id %></td>
+                  <td><%= jobs[i].title %></td>
+                  <td><%= jobs[i].company %></td>
+                  <td><%= jobs[i].package %> LPA</td>
+                  <td><%= jobs[i].location %></td>
+                  <td>
+                    <a
+                      href="/update-job/<%= jobs[i].job_id%>"
+                      class="btn border-shadow update"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-pencil-alt"></i
+                      ></span>
+                    </a>
+                    <a
+                      href="/delete-job/<%= jobs[i].job_id%>"
+                      class="btn border-shadow delete"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </a>
+                  </td>
+                </tr>
+                <% } %>
+                <tr>
+                  <td colspan="6">
+                      <a href="/update-job/-1" class="btn border-shadow">
+                        <span class="text-gradient"
+                          >New Job <i class="fas fa-user"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+
+      <!-- Applications form handling -->
+      <br>
+       <div class="container">
+        <h3><button id="toggle-application" class="btn btn-primary">
+          <i class="fas fa-caret-down"></i>
+        </button> Applications </h3>
+        <div id="application-table">
+          <form action="/" method="POST">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Job ID</th>
+                  <th>Title</th>
+                  <th>Package</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i = 0; i < applications.length; i++) { %>
+                <tr>
+                  <td><%= applications[i].application_id %></td>
+                  <td><%= applications[i].fullname %></td>
+                  <td><%= applications[i].job_id %></td>
+                  <td><%= applications[i].title %></td>
+                  <td><%= applications[i].package %> LPA</td>
+                  <td>
+                    <a
+                      href="/update-user?id=<%= applications[i].id%>"
+                      class="btn border-shadow update"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-pencil-alt"></i
+                      ></span>
+                    </a>
+                    <a
+                      class="btn border-shadow delete"
+                      data-id=<%applications[i].id%>
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </a>
+                  </td>
+                </tr>
+                <% } %>
+                <tr>
+                  <td colspan="6">
+                      <a href="/add-user" class="btn border-shadow">
+                        <span class="text-gradient"
+                          >New Application <i class="fas fa-user"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- /Main Site -->
+    <script src="js/admin.js"></script>
+  </body>
+</html>
