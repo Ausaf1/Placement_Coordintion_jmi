@@ -1,4 +1,4 @@
-body {
+/* body {
   padding: 30px;
 }
 .accordion {
@@ -13,12 +13,10 @@ body {
   font-size: 15px;
   transition: 0.4s;
 }
-
 .active,
 .accordion:hover {
   background-color: #ccc;
 }
-
 .accordion:after {
   content: "\002B";
   color: #777;
@@ -26,15 +24,25 @@ body {
   float: right;
   margin-left: 5px;
 }
-
 .active:after {
   content: "\2212";
+} */
+
+.logo {
+  margin-left: 1%;
+  margin-right: 1.5%;
 }
 
-.panel {
+.logo img {
+  height: 60px;
+  width: 60px;
+  border-radius: 2rem;
+}
+
+/* .panel {
   padding: 0 18px;
   background-color: white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-}
+} */

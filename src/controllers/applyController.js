@@ -1,4 +1,5 @@
 import DBConnection from "../configs/DBConnection";
+import newApplication from "../services/applyService";
 
 let apply = async (req, res) => {
     let job_id = req.params.id;
@@ -22,12 +23,12 @@ let apply = async (req, res) => {
                                 res.sendStatus(500);
                             }
                             else {
-                                DBConnection.query("select * from userdetails where id = ?", req.user.id, (err, userDetails) =>{
+                                DBConnection.query("select * from userdetails where id = ?", req.user.id, (err, userDetails) => {
                                     if (err) {
                                         console.log(err);
                                         res.sendStatus(500);
                                     } else {
-                                        if(!userDetails){
+                                        if (!userDetails) {
                                             console.log("no user details found");
                                             res.render("apply.ejs", {
                                                 user: req.user,
@@ -36,7 +37,7 @@ let apply = async (req, res) => {
                                                 company: companyDetails[0]
                                             });
                                         } else {
-                                            console.log("user details found");
+                                            // console.log("user details found");
                                             res.render("apply.ejs", {
                                                 user: req.user,
                                                 userdetails: userDetails[0],
@@ -61,6 +62,28 @@ let apply = async (req, res) => {
     });
 };
 
+let applyJob = async (req, res) => {
+    let job_id = req.params.id;
+    let applicant_id = req.user.id;
+    let application_id = req.applicant_id;
+    let data = {
+        job_id: job_id,
+        applicant_id: applicant_id,
+        application_id: application_id
+    }
+    try {
+        await newApplication.newApply(data);
+        res.redirect("/thanks");
+    } catch (err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+}
+
+
+
 module.exports = {
     apply: apply,
+    applyJob: applyJob
 };
+

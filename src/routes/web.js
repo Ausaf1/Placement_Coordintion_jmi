@@ -81,6 +81,9 @@ let initWebRoutes = (app) => {
 
     //apply page route
     router.get("/apply/:id", applyController.apply);
+    router.post("/apply/:id", applyController.applyJob);
+    router.get("/thanks", (req, res) => {
+        res.render("thanks.ejs");});
 
     //rounds page route
     router.get("/rounds/:id", roundsController.round);
