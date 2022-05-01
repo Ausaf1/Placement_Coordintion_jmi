@@ -11,6 +11,7 @@
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/adminPage.css" />
     
   </head>
@@ -30,7 +31,89 @@
     <main id="site-main">
       <!-- toggle button to show nested content -->
     
-        
+      <!-- Applications form handling -->
+      <br>
+       <div class="container">
+        <h3><button id="toggle-application" class="btn btn-primary">
+          <i class="fas fa-caret-down"></i>
+        </button> Applications </h3>
+        <div id="application-table">
+          <form action="/" method="POST">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Job ID</th>
+                  <th>Company </th>
+                  <th>Title</th>
+                  <th>Package</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i = 0; i < applications.length; i++) { %>
+                <tr>
+                  <td><%= applications[i].application_id %></td>
+                  <td><%= applications[i].fullname %></td>
+                  <td><%= applications[i].job_id %></td>
+                  <td><%= applications[i].name %></td>
+                  <td><%= applications[i].title %></td>
+                  <td><%= applications[i].package %> LPA</td>
+                  <td><%= applications[i].status %> </td>
+                  <td>
+                    <a
+                      href="/accept-application/<%= applications[i].application_id%>"
+                      class="btn border-shadow update"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fa fa-check"></i
+                      ></span>
+                    </a>
+                    <a
+                      href="/reject-application/<%= applications[i].application_id%>"
+                      class="btn border-shadow delete"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-times"></i
+                      ></span>
+                    </a>
+                    <a
+                      href="/reset-application/<%= applications[i].application_id%>"
+                      class="btn border-shadow delete"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fa fa-arrow-left"></i
+                      ></span>
+                    </a>
+                    <a
+                      href="/delete-application/<%= applications[i].application_id%>"
+                      class="btn border-shadow delete"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fa fa-trash"></i
+                      ></span>
+                    </a>
+                  </td>
+                </tr>
+                <% } %>
+                <tr>
+                  <td colspan="8">
+                      <a href="/login" class="btn border-shadow">
+                        <span class="text-gradient"
+                          >New Application <i class="fas fa-user"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+
       <!-- Users form handling -->
       <div class="container"> 
         <h3><button id="toggle-user" class="btn btn-primary">
@@ -70,7 +153,7 @@
                       class="btn border-shadow delete"
                     >
                       <span class="text-gradient"
-                        ><i class="fas fa-times"></i
+                        ><i class="fa fa-trash"></i
                       ></span>
                     </a>
                   </td>
@@ -130,7 +213,7 @@
 
                     >
                       <span class="text-gradient"
-                        ><i class="fas fa-times"></i
+                        ><i class="fa fa-trash"></i
                       ></span>
                     </a>
                   </td>
@@ -168,6 +251,9 @@
                   <th>Company</th>
                   <th>Package</th>
                   <th>Location</th>
+                  <th>Allowed Braches</th>
+                  <th>Allowed Genders</th>
+                  <th>Min CPI</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -179,6 +265,9 @@
                   <td><%= jobs[i].company %></td>
                   <td><%= jobs[i].package %> LPA</td>
                   <td><%= jobs[i].location %></td>
+                  <td><%= jobs[i].allowed_branches %></td>
+                  <td><%= jobs[i].allowed_gender %></td>
+                  <td><%= jobs[i].min_cpi %></td>
                   <td>
                     <a
                       href="/update-job/<%= jobs[i].job_id%>"
@@ -193,14 +282,14 @@
                       class="btn border-shadow delete"
                     >
                       <span class="text-gradient"
-                        ><i class="fas fa-times"></i
+                        ><i class="fa fa-trash"></i
                       ></span>
                     </a>
                   </td>
                 </tr>
                 <% } %>
                 <tr>
-                  <td colspan="6">
+                  <td colspan="9">
                       <a href="/update-job/-1" class="btn border-shadow">
                         <span class="text-gradient"
                           >New Job <i class="fas fa-user"></i
@@ -215,68 +304,7 @@
         </div>
       </div>
 
-      <!-- Applications form handling -->
       <br>
-       <div class="container">
-        <h3><button id="toggle-application" class="btn btn-primary">
-          <i class="fas fa-caret-down"></i>
-        </button> Applications </h3>
-        <div id="application-table">
-          <form action="/" method="POST">
-            <table class="table">
-              <thead class="thead-dark">
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Job ID</th>
-                  <th>Title</th>
-                  <th>Package</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% for(var i = 0; i < applications.length; i++) { %>
-                <tr>
-                  <td><%= applications[i].application_id %></td>
-                  <td><%= applications[i].fullname %></td>
-                  <td><%= applications[i].job_id %></td>
-                  <td><%= applications[i].title %></td>
-                  <td><%= applications[i].package %> LPA</td>
-                  <td>
-                    <a
-                      href="/update-user?id=<%= applications[i].id%>"
-                      class="btn border-shadow update"
-                    >
-                      <span class="text-gradient"
-                        ><i class="fas fa-pencil-alt"></i
-                      ></span>
-                    </a>
-                    <a
-                      class="btn border-shadow delete"
-                      data-id=<%applications[i].id%>
-                    >
-                      <span class="text-gradient"
-                        ><i class="fas fa-times"></i
-                      ></span>
-                    </a>
-                  </td>
-                </tr>
-                <% } %>
-                <tr>
-                  <td colspan="6">
-                      <a href="/add-user" class="btn border-shadow">
-                        <span class="text-gradient"
-                          >New Application <i class="fas fa-user"></i
-                        ></span>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </form>
-        </div>
-      </div>
     </main>
     <!-- /Main Site -->
     <script src="js/admin.js"></script>

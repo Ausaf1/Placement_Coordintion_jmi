@@ -6,6 +6,7 @@ let newApply = (data) => {
       job_id: data.job_id,
       application_id: data.application_id,
       applicant_id: data.applicant_id,
+      status: data.status
     };
     DBConnection.query(
       "INSERT INTO applications SET ?",

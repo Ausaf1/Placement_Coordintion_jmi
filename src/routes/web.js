@@ -18,92 +18,94 @@ initPassportLocal();
 let router = express.Router();
 
 let initWebRoutes = (app) => {
-    //langing page route
-    router.get(
-        "/landingPage",
-        loginController.checkLoggedOut,
-        landingPageController.landingPage
-    );
-    
-    //register page route
-    router.get("/register", registerController.getPageRegister);
-    router.post(
-        "/register",
-        auth.validateRegister,
-        registerController.createNewUser
-    );
-    
-    //login page route
-    router.get("/login", loginController.getPageLogin);
-    router.post("/login",
-        passport.authenticate("local", {
-            successRedirect: "/",
-            failureRedirect: "/login",
-            successFlash: true,
-            failureFlash: true,
-        })
-    );
-    
-    // logout route
-    router.get("/logout", loginController.postLogOut);
-    router.post("/logout", loginController.postLogOut);
-    
-    //profile homepage route
-    router.get(
-        "/",
-        loginController.checkLoggedIn,
-        homePageController.handleHelloWorld
-    );
+  //langing page route
+  router.get(
+    "/landingPage",
+    loginController.checkLoggedOut,
+    landingPageController.landingPage
+  );
 
-    //edit profile page route
-    router.get(
-        "/editProfile",
-        loginController.checkLoggedIn,
-        editProfileController.editProfile
-    );
-    router.post(
-        "/editProfile/:id", 
-        editProfileController.editProfileUser);    
-    router.post(
-        "/:id",
-        editProfileController.uploadImage
-    );
+  //register page route
+  router.get("/register", registerController.getPageRegister);
+  router.post(
+    "/register",
+    auth.validateRegister,
+    registerController.createNewUser
+  );
 
-    //router.get("/active", activeController.activeSessions);
-    //active sessions page
-    router.get(
-        "/active",
-        loginController.checkLoggedIn,
-        activeController.activeSessions
-    );
+  //login page route
+  router.get("/login", loginController.getPageLogin);
+  router.post(
+    "/login",
+    passport.authenticate("local", {
+      successRedirect: "/",
+      failureRedirect: "/login",
+      successFlash: true,
+      failureFlash: true,
+    })
+  );
 
-    // router.post("/active", activeController.checkApplied);
+  // logout route
+  router.get("/logout", loginController.postLogOut);
+  router.post("/logout", loginController.postLogOut);
 
-    //apply page route
-    router.get("/apply/:id", applyController.apply);
-    router.post("/apply/:id", applyController.applyJob);
-    router.get("/thanks", (req, res) => {
-        res.render("thanks.ejs");});
+  //profile homepage route
+  router.get(
+    "/",
+    loginController.checkLoggedIn,
+    homePageController.handleHelloWorld
+  );
 
-    //rounds page route
-    router.get("/rounds/:id", roundsController.round);
+  //edit profile page route
+  router.get(
+    "/editProfile",
+    loginController.checkLoggedIn,
+    editProfileController.editProfile
+  );
+  router.post("/editProfile/:id", editProfileController.editProfileUser);
+  router.post("/:id", editProfileController.uploadImage);
 
-    // admin page routes
+  //router.get("/active", activeController.activeSessions);
+  //active sessions page
+  router.get(
+    "/active",
+    loginController.checkLoggedIn,
+    activeController.activeSessions
+  );
 
-    router.get("/admin", adminController.getPage);
-    //user table
-        router.get("/update-user/:id", adminController.getEditUser);
-        router.get("/delete-user/:id", adminController.deleteUser);
-    //company table
-        router.get("/update-company/:id", adminController.getEditCompany);
-        router.post("/update-company/:id", adminController.updateCompany);
-        router.get("/delete-company/:id", adminController.deleteCompany);
-    //job table
-        router.get("/update-job/:id", adminController.getEditJob);
-        router.post("/update-job/:id", adminController.updateJob);
-        router.get("/delete-job/:id", adminController.deleteJob);
+  // router.post("/active", activeController.checkApplied);
 
-    return app.use("/", router);
+  //apply page route
+  router.get("/apply/:id", applyController.apply);
+  router.post("/apply/:id", applyController.applyJob);
+  router.get("/thanks", (req, res) => {
+    res.render("thanks.ejs");
+  });
+
+  //rounds page route
+  router.get("/rounds/:id", roundsController.round);
+
+  // admin page routes
+
+  router.get("/admin", adminController.getPage);
+  //user table
+  router.get("/update-user/:id", adminController.getEditUser);
+  router.get("/delete-user/:id", adminController.deleteUser);
+  //company table
+  router.get("/update-company/:id", adminController.getEditCompany);
+  router.post("/update-company/:id", adminController.updateCompany);
+  router.get("/delete-company/:id", adminController.deleteCompany);
+  //job table
+  router.get("/update-job/:id", adminController.getEditJob);
+  router.post("/update-job/:id", adminController.updateJob);
+  router.get("/delete-job/:id", adminController.deleteJob);
+  //applications table
+  router.get("/accept-application/:id", adminController.acceptApplication);
+  router.get("/reject-application/:id", adminController.rejectApplication);
+  router.get("/reset-application/:id", adminController.resetApplication);
+  router.get("/delete-application/:id", adminController.deleteApplication);
+
+  return app.use("/", router);
 };
 
 module.exports = initWebRoutes;

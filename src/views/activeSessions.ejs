@@ -90,9 +90,17 @@
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>
                 <h6 class="mb-0"><%= job.title %> </h6>
-                <p class="mb-0 opacity-75"><%=job.company%></p>
+                <p class="mb-0 opacity-75"><%=job.name%></p>
                 <% if (job.applied == true) { %>
-                  <p class="mb-0 opacity-75">Applied</p>
+                  <% if (job.status == "Applied") { %> 
+                    <p class="mb-0 opacity-75">Applied</p>
+                  <% } else if (job.status == "Rejected") { %>
+                    <!-- reject with color red -->
+                    <p class="mb-0 opacity-75" style="color:red;">Rejected</p>
+                  <% } else if (job.status == "Accepted") { %>
+                    <!-- Bold select with color green -->
+                    <p class="mb-0 opacity-90" style="color:green;">Accepted</p>
+                  <% } %>
                 <% } else { %>
                   <p class="mb-0 opacity-75">Not Applied</p>
                 <% } %>  
@@ -107,7 +115,7 @@
 
     <div class="offers">
       <button class="btn btn-success">
-        <a class="application" href="/apply"> Check for more available offers</a>
+        <a class="application" href="/"> Back to Homepage</a>
       </button>
     </div>
     
