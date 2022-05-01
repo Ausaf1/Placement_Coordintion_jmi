@@ -56,7 +56,9 @@ let apply = async (req, res) => {
                 // apply page will not open, since already applied
                 // rounds page will open
                 console.log("applications founds", rows[0]);
-                res.redirect("/rounds/" + rows[0].application_id);
+                console.log("job_id = ", job_id);
+                console.log("req.params.id = ", req.params.id);
+                res.redirect("/rounds/" + job_id);
             }
         }
     });

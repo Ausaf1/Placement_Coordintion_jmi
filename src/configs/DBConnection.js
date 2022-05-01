@@ -50,7 +50,7 @@ connection.query("CREATE TABLE IF NOT EXISTS jobs( job_id INT NOT NULL AUTO_INCR
         console.log(err);
     }
     else {
-        console.log("Table jobs created");    
+        console.log("Table jobs created");
     }
 });
 
@@ -61,6 +61,15 @@ connection.query("CREATE TABLE IF NOT EXISTS applications(application_id INT NOT
     }
     else {
         console.log("Table applications created");
+    }
+});
+
+connection.query("CREATE TABLE IF NOT EXISTS placement_procedure(job_id INT NOT NULL,stage_id INT NOT NULL,PRIMARY KEY (job_id,stage_id),round_name VARCHAR(255) NOT NULL,round_date DATE NOT NULL,round_description VARCHAR(555) NOT NULL,FOREIGN KEY (job_id) REFERENCES jobs(job_id)) ENGINE=InnoDB DEFAULT CHARSET=utf8;", (err, result) => {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log("Table placement_procedure created");
     }
 });
 
