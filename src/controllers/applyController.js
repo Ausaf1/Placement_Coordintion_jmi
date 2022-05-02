@@ -3,7 +3,7 @@ import newApplication from "../services/applyService";
 
 let apply = async (req, res) => {
     let job_id = req.params.id;
-    DBConnection.query("select * from applications where job_id = ?", job_id, (err, rows) => {
+    DBConnection.query("select * from applications where job_id = ? and applicant_id = ?", [job_id, req.user.id], (err, rows) => {
         if (err) {
             console.log(err);
             res.sendStatus(500);

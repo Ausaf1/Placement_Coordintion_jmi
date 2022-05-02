@@ -1,5 +1,6 @@
 require("dotenv").config();
 import mysql from "mysql2";
+import bcrypt from "bcryptjs";
 
 let connection = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -20,6 +21,23 @@ connection.query(
     }
   }
 );
+
+// insert admin details
+let salt = bcrypt.genSaltSync(10);
+let admin = {
+  id: process.env.ADMIN_ID,
+  fullname: "Admin",
+  studentid: "000000",
+  email: process.env.ADMIN_EMAIL,
+  password: bcrypt.hashSync(process.env.ADMIN_PASSWORD, salt),
+};
+connection.query("INSERT INTO users SET ?", admin, (err, result) => {
+  if (err) {
+    console.log("Admin already in database");
+  } else {
+    console.log("Admin created");
+  }
+});
 
 connection.query(
   "CREATE TABLE IF NOT EXISTS userdetails (enrollmentNo VARCHAR(255) NOT NULL, branch VARCHAR(255) NOT NULL, yearOfGraduation VARCHAR(255) NOT NULL,gender varchar(45) NOT NULL, contact varchar(255) NOT NULL,address varchar(555) NOT NULL,avgGpa decimal(10,4) NOT NULL,resume varchar(555) NOT NULL,id int NOT NULL,PRIMARY KEY (`id`),CONSTRAINT `id` FOREIGN KEY (`id`) REFERENCES `placement_coordination`.`users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8;",

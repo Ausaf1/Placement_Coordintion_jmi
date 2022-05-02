@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <div class="logo">
                 <img src="images/JMI logo.jpeg" alt="jamia_logo" />
@@ -45,14 +45,23 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <header id="header">
+        <nav>
+          <div class="container">
+            <div class="text-center">
+              <a href="/" class="nav-brand text-dark">Admin Panel</a>
+            </div>
+          </div>
+        </nav>
+      </header>
     <div class="container">
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card border-0 shadow rounded-3 my-5">
                     <div class="card-body p-4 p-sm-5">
                         <h1 class="title card-title text-center mb-5 fw-light">Sign In As Admin</h1>
-                        <form method="POST" action="/login">
+                        <form method="POST" action="/admin-login">
                             <div class="form-floating mb-3">
                                 <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                                 <label for="floatingInput">Email address</label>
@@ -65,13 +74,12 @@
                             <div class="form-check mb-3">
                                 <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
                                 <label class="form-check-label" for="rememberPasswordCheck">
-                      Remember password
-                    </label>
+                                    Remember password
+                                </label>
                             </div>
                       
                             <div class="d-grid">
-                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign
-                      in</button>
+                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign in</button>
                             </div>
                 
                         </form>

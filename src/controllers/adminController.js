@@ -1,6 +1,20 @@
 import DBConnection from "../configs/DBConnection";
 
+let authenticate = async (req, res, next) => {
+  if(!req.user){
+    console.log("not logged in");
+    res.redirect("/admin-login");
+  }else if (req.user.id != -1){ // 4 is database id of admin
+    console.log("not admin");
+    res.redirect("/admin-login");
+  }else{
+    console.log("logged in");
+    next();
+  }
+};
+
 let getPage = async (req, res) => {
+  //console.log("Rendering Admin page, the user id is: ", req.user.id);
   var render = {
     users: "",
     companies: "",
@@ -41,6 +55,10 @@ let getPage = async (req, res) => {
   setTimeout(() => {
     res.render("admin/adminPage.ejs", render);
   }, 1000);
+};
+
+let getPageAdminLogin = async (req, res) => {
+  res.render("admin/adminSignIn.ejs");
 };
 
 let getEditUser = async (req, res) => {
@@ -504,7 +522,9 @@ let deleteApplication = async (req, res) => {
 };
 
 module.exports = {
+  authenticate: authenticate,
   getPage: getPage,
+  getPageAdminLogin: getPageAdminLogin,
   getEditUser: getEditUser,
   deleteUser: deleteUser,
   getEditCompany: getEditCompany,

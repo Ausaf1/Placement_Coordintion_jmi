@@ -45,6 +45,17 @@ let initWebRoutes = (app) => {
     })
   );
 
+  router.get("/admin-login", adminController.getPageAdminLogin);
+  router.post(
+    "/admin-login",
+    passport.authenticate("local", {
+      successRedirect: "/admin",
+      failureRedirect: "/login",
+      successFlash: true,
+      failureFlash: true,
+    })
+  );
+
   // logout route
   router.get("/logout", loginController.postLogOut);
   router.post("/logout", loginController.postLogOut);
@@ -87,7 +98,7 @@ let initWebRoutes = (app) => {
 
   // admin page routes
 
-  router.get("/admin", adminController.getPage);
+  router.get("/admin", adminController.authenticate, adminController.getPage);
   //user table
   router.get("/update-user/:id", adminController.getEditUser);
   router.get("/delete-user/:id", adminController.deleteUser);
