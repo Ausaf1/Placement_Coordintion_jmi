@@ -11,7 +11,6 @@ import adminController from "../controllers/adminController";
 import auth from "../validation/authValidation";
 import passport from "passport";
 import initPassportLocal from "../controllers/passportLocalController";
-import thanksController from "../controllers/thanksController";
 
 // Init all passport
 initPassportLocal();
@@ -36,9 +35,21 @@ let initWebRoutes = (app) => {
 
     //login page route
     router.get("/login", loginController.getPageLogin);
-    router.post("/login",
+    router.post(
+        "/login",
         passport.authenticate("local", {
             successRedirect: "/",
+            failureRedirect: "/login",
+            successFlash: true,
+            failureFlash: true,
+        })
+    );
+
+    router.get("/admin-login", adminController.getPageAdminLogin);
+    router.post(
+        "/admin-login",
+        passport.authenticate("local", {
+            successRedirect: "/admin",
             failureRedirect: "/login",
             successFlash: true,
             failureFlash: true,
@@ -62,13 +73,8 @@ let initWebRoutes = (app) => {
         loginController.checkLoggedIn,
         editProfileController.editProfile
     );
-    router.post(
-        "/editProfile/:id",
-        editProfileController.editProfileUser);
-    router.post(
-        "/:id",
-        editProfileController.uploadImage
-    );
+    router.post("/editProfile/:id", editProfileController.editProfileUser);
+    router.post("/:id", editProfileController.uploadImage);
 
     //router.get("/active", activeController.activeSessions);
     //active sessions page
@@ -82,17 +88,17 @@ let initWebRoutes = (app) => {
 
     //apply page route
     router.get("/apply/:id", applyController.apply);
-
-    // post for apply page
     router.post("/apply/:id", applyController.applyJob);
-    router.get("/thanks", thanksController.thanks);
+    router.get("/thanks", (req, res) => {
+        res.render("thanks.ejs");
+    });
 
     //rounds page route
     router.get("/rounds/:id", roundsController.round);
 
     // admin page routes
 
-    router.get("/admin", adminController.getPage);
+    router.get("/admin", adminController.authenticate, adminController.getPage);
     //user table
     router.get("/update-user/:id", adminController.getEditUser);
     router.get("/delete-user/:id", adminController.deleteUser);
@@ -104,6 +110,11 @@ let initWebRoutes = (app) => {
     router.get("/update-job/:id", adminController.getEditJob);
     router.post("/update-job/:id", adminController.updateJob);
     router.get("/delete-job/:id", adminController.deleteJob);
+    //applications table
+    router.get("/accept-application/:id", adminController.acceptApplication);
+    router.get("/reject-application/:id", adminController.rejectApplication);
+    router.get("/reset-application/:id", adminController.resetApplication);
+    router.get("/delete-application/:id", adminController.deleteApplication);
 
     return app.use("/", router);
 };

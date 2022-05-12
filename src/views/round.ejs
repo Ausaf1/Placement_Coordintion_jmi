@@ -73,21 +73,21 @@
         <div class="row">
           <div class="col-xl-12">
             <ul class="timeline-list">
-              <!-- Single Experience -->
-              <li>
-                <div class="timeline_content">
-                  <span>2 June 2022</span>
-                  <h4>Intern Developer span</h4>
-                  <p>
-                    We gather your personal and organisational information. We
-                    then determine the path of hiring process and understand
-                    your goals and we combine your ideas with ours for an
-                    amazing website.
-                  </p>
-                </div>
-              </li>
-              <!-- Single Experience -->
-              <li>
+              <%for(var i = 0;i < rounds.length;i++){%>
+                <li>
+                  <div class="timeline_content">
+                    <span>2 June 2022</span>
+                    <h4><%=rounds[i].round_name %>  </h4>
+                    <p>
+                      <%=rounds[i].round_description %> 
+                      <%for(var j = 0;j < 186 - rounds[i].round_description.length;j++) {%>
+                        &nbsp;
+                      <%} %> 
+                    </p>
+                  </div>
+                </li>
+            <%}%> 
+              <!-- <li>
                 <div class="timeline_content">
                   <span>18 June 2022</span>
                   <h4>Junior Developer</h4>
@@ -99,7 +99,6 @@
                   </p>
                 </div>
               </li>
-              <!-- Single Experience -->
               <li>
                 <div class="timeline_content">
                   <span>4 July 2022</span>
@@ -112,7 +111,6 @@
                   </p>
                 </div>
               </li>
-              <!-- Single Experience -->
               <li>
                 <div class="timeline_content">
                   <span>8 July 2022</span>
@@ -124,7 +122,7 @@
                     amazing website.
                   </p>
                 </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>

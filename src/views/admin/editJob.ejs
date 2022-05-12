@@ -40,11 +40,15 @@
           <h3>Edit Job Details</h3>
 
           <div class="card">
-            <form class="form-card" method="POST" action="/update-job/<%= job.job_id %>">
+            <form
+              class="form-card"
+              method="POST"
+              action="/update-job/<%= job.job_id %>"
+            >
               <div class="row justify-content-between text-left">
                 <div class="form-group col-sm-6 flex-column d-flex">
                   <label class="form-control-label px-3"
-                    >Job ID (dont touch for AI)<span class="text-danger"> *</span></label
+                    >Job ID (dont touch for AI)</label
                   >
                   <input
                     type="text"
@@ -56,7 +60,7 @@
                 </div>
                 <div class="form-group col-sm-6 flex-column d-flex">
                   <label class="form-control-label px-3"
-                    >Company ID (must exist already in db)<span class="text-danger"> *</span></label
+                    >Company ID (must exist already in db)</label
                   >
                   <input
                     type="text"
@@ -66,11 +70,9 @@
                     value="<%= job.company_id %>"
                   />
                 </div>
-                
+
                 <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >Title<span class="text-danger"> *</span></label
-                  >
+                  <label class="form-control-label px-3">Title</label>
                   <input
                     type="text"
                     id="lname"
@@ -79,11 +81,9 @@
                     value="<%= job.title %>"
                   />
                 </div>
-              </div>
-              <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >Job Descption<span class="text-danger"> *</span></label
-                  >
+
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Job Descption</label>
                   <input
                     type="text"
                     id="lname"
@@ -92,11 +92,8 @@
                     value="<%= job.job_description %>"
                   />
                 </div>
-              </div>
-              <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >Location<span class="text-danger"> *</span></label
-                  >
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Location</label>
                   <input
                     type="text"
                     id="lname"
@@ -105,23 +102,116 @@
                     value="<%= job.location %>"
                   />
                 </div>
-              </div>
-              <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >Package<span class="text-danger"> *</span></label
-                  >
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Package</label>
                   <input
                     type="number"
+                    min="0"
+                    step="0.001"
                     id="lname"
                     name="package"
                     placeholder="Enter job package in lpa"
                     value="<%= job.package %>"
                   />
                 </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Min CPI:</label>
+                  <input
+                    class="form-control"
+                    id="inputScore"
+                    type="number"
+                    min="0"
+                    max="10"
+                    step="0.01"
+                    name="min_cpi"
+                    placeholder="Entern minimum cpi"
+                    value="<%=job.min_cpi %>"
+                  />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <!-- <label class="form-control-label px-3">Min CPI:</label>
+                  <input
+                    type="number"
+                    id="lname"
+                    name="min_cpi"
+                    placeholder="Enter minimum CPI"
+                    value="<%= job.min_cpi %>"
+                  /> -->
+                </div>
+                <div class="form-group col-sm-6">
+                  <label class="form-control-label px-3"
+                    >Allowed Branches:</label
+                  >
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="CS"
+                    id="CS"
+                    name="allowed_branches"
+                  />
+                  <label class="form-check-label" for="CS">CS</label>
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="ECE"
+                    id="ECE"
+                    name="allowed_branches"
+                  />
+                  <label class="form-check-label" for="ECE">ECE</label>
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="EE"
+                    id="EE"
+                    name="allowed_branches"
+                  />
+                  <label class="form-check-label" for="EE">EE</label>
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="ME"
+                    id="ME"
+                    name="allowed_branches"
+                  />
+                  <label class="form-check-label" for="ME">ME</label>
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="CE"
+                    id="CE"
+                    name="allowed_branches"
+                  />
+                  <label class="form-check-label" for="CE">CE</label>
+                </div>
+                <div class="form-group col-sm-6">
+                  <label class="form-control-label px-3">Allowed Gender:</label>
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="Male"
+                    id="Male"
+                    name="allowed_gender"
+                  />
+                  <label class="form-check-label" for="Male">Male</label>
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="Female"
+                    id="Female"
+                    name="allowed_gender"
+                  />
+                  <label class="form-check-label" for="Female">Female</label>
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="Other"
+                    id="Other"
+                    name="allowed_gender"
+                  />
+                  <label class="form-check-label" for="Other">Other</label>
+                </div>
               </div>
-              <div>
-            </div>
-              <div class="row justify-content-end">
+              <div class="row justify-content-center">
                 <div class="form-group col-sm-6">
                   <button type="submit" class="btn-block btn-primary">
                     Save

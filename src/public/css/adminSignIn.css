@@ -1,0 +1,37 @@
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+.btn-google {
+  color: white !important;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white !important;
+  background-color: #3b5998;
+}
+
+.logo {
+  margin-left: 1%;
+  margin-right: 1.5%;
+}
+
+.logo img {
+  height: 60px;
+  width: 60px;
+  border-radius: 2rem;
+}
+
+.error {
+  background-color: rgb(211, 97, 97);
+  padding: 0.5rem 2rem;
+  border-radius: 3px;
+  width: 90%;
+  border: none;
+  font-family: "Nunito Sans", sans-serif;
+  margin: 1.5% auto;
+  font-size: medium;
+}
