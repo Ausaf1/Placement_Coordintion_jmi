@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $(window).scroll(function() {
+$(document).ready(function () {
+    $(window).scroll(function () {
         // sticky navbar
         if (this.scrollY > 20) {
             $(".navbar").addClass("sticky");
@@ -14,21 +14,21 @@ $(document).ready(function() {
     });
 
     // slide-up script
-    $(".scroll-up-btn").click(function() {
+    $(".scroll-up-btn").click(function () {
         $("html").animate({ scrollTop: 0 });
         $("html").css("scrollBehavior", "auto");
     });
-    $(".navbar .menu li a").click(function() {
+    $(".navbar .menu li a").click(function () {
         //smooth scroll
         $("html").css("scrollBehavior", "smooth");
     }); // toggle menu
-    $(".menu-btn").click(function() {
+    $(".menu-btn").click(function () {
         $(".navbar .menu").toggleClass("active");
         $(".menu-btn i").toggleClass("active");
     });
 });
 
-$('#button-a').click(function() {
+$('#button-a').click(function () {
     var name = $('#name').val();
     var email = $('#email').val();
     var message = $('#message').val();
@@ -45,4 +45,11 @@ $('#button-a').click(function() {
             text: 'Thank you for your message',
         })
     }
+});
+
+const navLinks = document.querySelectorAll('.nav-item')
+const menuToggle = document.getElementById('navbarSupportedContent')
+const bsCollapse = new bootstrap.Collapse(menuToggle)
+navLinks.forEach((l) => {
+    l.addEventListener('click', () => { bsCollapse.toggle() })
 });

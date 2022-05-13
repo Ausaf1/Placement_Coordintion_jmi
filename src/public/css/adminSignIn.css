@@ -1,3 +1,8 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 .btn-login {
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
@@ -34,4 +39,20 @@
   font-family: "Nunito Sans", sans-serif;
   margin: 1.5% auto;
   font-size: medium;
+}
+
+.text-dark {
+  color: var(--dark);
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#header nav {
+  background-color: #06d6a0;
+  padding: 1em 0;
+  width: 100%;
 }

@@ -48,6 +48,7 @@ a {
 
 .text-dark {
   color: var(--dark);
+  font-family: "Roboto", sans-serif;
 }
 
 .inline {
