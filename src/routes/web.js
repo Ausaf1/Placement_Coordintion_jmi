@@ -94,7 +94,7 @@ let initWebRoutes = (app) => {
     });
 
     //rounds page route
-    router.get("/rounds/:id", roundsController.round);
+    router.get("/rounds/:id", loginController.checkLoggedIn, roundsController.round);
 
     // admin page routes
 
