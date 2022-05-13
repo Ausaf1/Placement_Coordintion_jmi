@@ -303,6 +303,69 @@
         </div>
       </div>
 
+      <!-- Placement Rounds handling -->
+      <br>
+       <div class="container">
+        <h3><button id="toggle-job" class="btn btn-primary">
+          <i class="fas fa-caret-down"></i>
+        </button> Rounds </h3>
+        <div id="rounds-table">
+          <form action="/" method="POST">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Round ID</th>
+                  <th>Company</th>
+                  <th>Job Title</th>
+                  <th>Round Name</th>
+                  <th>Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i = 0; i < rounds.length; i++) { %>
+                <tr>
+                  <td><%= rounds[i].round_id %></td>
+                  <td><%= rounds[i].company %></td>
+                  <td><%= rounds[i].title %></td>
+                  <td><%= rounds[i].round_name %> LPA</td>
+                  <td><%= rounds[i].date %></td>
+                  <td>
+                    <a
+                      href="/update-round/<%= rounds[i].round_id%>"
+                      class="btn border-shadow update"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-pencil-alt"></i
+                      ></span>
+                    </a>
+                    <a
+                      href="/delete-round/<%= rounds[i].round_id%>"
+                      class="btn border-shadow delete"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fa fa-trash"></i
+                      ></span>
+                    </a>
+                  </td>
+                </tr>
+                <% } %>
+                <tr>
+                  <td colspan="9">
+                      <a href="/update-round/-1" class="btn border-shadow">
+                        <span class="text-gradient"
+                          >New Round <i class="fas fa-user"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+
       <br>
     </main>
     <!-- /Main Site -->

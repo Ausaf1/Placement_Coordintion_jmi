@@ -52,6 +52,18 @@ let getPage = async (req, res) => {
             render.applications = applications;
         }
     );
+    DBConnection.query(
+        "select round_id, name company, title, round_name, date from placement_procedure natural join jobs natural join companies;",
+        (err, rounds) => {
+            if(err){
+                console.log(err);
+            }
+            render.rounds = rounds;
+            date = rounds[0].date;
+            
+            console.log(rounds[0].date.getMonth());
+        }
+    )
     setTimeout(() => {
         res.render("admin/adminPage.ejs", render);
     }, 1000);
