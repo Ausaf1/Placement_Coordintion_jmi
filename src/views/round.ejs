@@ -76,7 +76,14 @@
               <%for(var i = 0;i < rounds.length;i++){%>
                 <li>
                   <div class="timeline_content">
-                    <span><%=rounds[i].date %> </span>
+                    <h4>Round <%=i+1%></h4>
+                    <!-- parse date month and year -->
+                    <%var date = new Date(rounds[i].date);%>
+                    <%var month = date.getMonth()+1;%>
+                    <%var year = date.getFullYear();%>
+                    <%var day = date.getDate();%>
+                    <%var date_string = day+"/"+month+"/"+year;%>
+                    <span>Date: <%=date_string%></span>
                     <h4><%=rounds[i].round_name %>  </h4>
                     <p>
                       <%=rounds[i].round_description %> 
