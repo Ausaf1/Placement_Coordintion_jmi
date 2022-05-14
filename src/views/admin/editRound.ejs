@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Company details</title>
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/activeSessions.css" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Open+Sans:wght@700&family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/editDetails.css" />
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container-fluid px-1 py-5 mx-auto">
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+          <h3>Edit Round Details</h3>
+
+          <div class="card">
+            <form
+              class="form-card"
+              method="POST"
+              action="/update-round/<%= round.round_id %>"
+            >
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                    >Round ID (dont touch for AI)</label
+                  >
+                  <input
+                    type="text"
+                    id="fname"
+                    name="round_id"
+                    placeholder="Enter your round ID"
+                    value="<%= round.round_id %>"
+                  />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                    >Job ID (must exist already in db)</label
+                  >
+                  <input
+                    type="text"
+                    id="fname"
+                    name="job_id"
+                    placeholder="Enter Job ID"
+                    value="<%= round.job_id %>"
+                  />
+                </div>
+
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Round Name</label>
+                  <input
+                    type="text"
+                    id="lname"
+                    name="round_name"
+                    placeholder="Enter round name"
+                    value="<%= round.round_name %>"
+                  />
+                </div>
+
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Round Descption (max 186 chars)</label>
+                  <input
+                    type="text"
+                    id="lname"
+                    name="round_description"
+                    placeholder="Enter round description"
+                    value="<%= round.round_description %>"
+                  />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3">Date</label>
+                  <input
+                    type="date"
+                    id="lname"
+                    name="date"
+                    placeholder="Enter date"
+                    value="<%= round.date %>"
+                  />
+                </div>
+              <div class="row justify-content-center">
+                <div class="form-group col-sm-6">
+                  <button type="submit" class="btn-block btn-primary">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

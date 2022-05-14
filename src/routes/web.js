@@ -115,9 +115,9 @@ let initWebRoutes = (app) => {
   router.post("/update-job/:id", adminController.updateJob);
   router.get("/delete-job/:id", adminController.deleteJob);
   //rounds table
-//   router.get("/update-round/:id", adminController.getEditRound);
-//   router.post("/update-round/:id", adminController.updateRound);
-//   router.get("/delete-round/:id", adminController.deleteRound);
+  router.get("/update-round/:id", adminController.getEditRound);
+  router.post("/update-round/:id", adminController.updateRound);
+  router.get("/delete-round/:id", adminController.deleteRound);
   //applications table
   router.get("/accept-application/:id", adminController.acceptApplication);
   router.get("/reject-application/:id", adminController.rejectApplication);

@@ -94,7 +94,7 @@ connection.query(
     }
 );
 
-connection.query("CREATE TABLE IF NOT EXISTS placement_procedure(round_id INT NOT NULL,job_id INT NOT NULL,round_name VARCHAR(255) NOT NULL,round_description VARCHAR(555) NOT NULL, date DATE NOT NULL,PRIMARY KEY (round_id,job_id),FOREIGN KEY (job_id) REFERENCES jobs(job_id)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+connection.query("CREATE TABLE IF NOT EXISTS placement_procedure(round_id INT NOT NULL AUTO_INCREMENT,job_id INT NOT NULL,round_name VARCHAR(255) NOT NULL,round_description VARCHAR(555) NOT NULL, date DATE NOT NULL,PRIMARY KEY (round_id,job_id),FOREIGN KEY (job_id) REFERENCES jobs(job_id)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
     (err, result) => {
         if (err) {
             console.log(err);
