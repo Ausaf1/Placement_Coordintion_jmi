@@ -81,9 +81,15 @@
           <br>
           <!-- button hidden submit -->
             <!-- <button type="submit" class="btn btn-primary" style="display:none;"></button> onclick="document.getElementById('apply-form-<%= job.job_id %>').submit() -->
-          <a href="/apply/<%= job.job_id %> "
-           class="list-group-item list-group-item-action d-flex gap-3 py-3" 
-           aria-current="true">
+          <% if (job.status == "Accepted" || job.status == "Rejected") { %>
+            <a
+              class="list-group-item list-group-item-action d-flex gap-3 py-3" 
+              aria-current="true">
+          <% } else { %>
+              <a href="/apply/<%= job.job_id %> "
+                class="list-group-item list-group-item-action d-flex gap-3 py-3" 
+                aria-current="true">
+          <% } %>
             <img src="<%= job.logo_link %>" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> 
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>

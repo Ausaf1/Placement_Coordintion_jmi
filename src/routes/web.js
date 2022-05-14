@@ -94,7 +94,11 @@ let initWebRoutes = (app) => {
     });
 
     //rounds page route
-    router.get("/rounds/:id", loginController.checkLoggedIn, roundsController.round);
+    router.get(
+        "/rounds/:id",
+        loginController.checkLoggedIn,
+        roundsController.round
+    );
 
     // admin page routes
 
@@ -110,6 +114,10 @@ let initWebRoutes = (app) => {
     router.get("/update-job/:id", adminController.getEditJob);
     router.post("/update-job/:id", adminController.updateJob);
     router.get("/delete-job/:id", adminController.deleteJob);
+    //rounds table
+    router.get("/update-round/:id", adminController.getEditRound);
+    router.post("/update-round/:id", adminController.updateRound);
+    router.get("/delete-round/:id", adminController.deleteRound);
     //applications table
     router.get("/accept-application/:id", adminController.acceptApplication);
     router.get("/reject-application/:id", adminController.rejectApplication);

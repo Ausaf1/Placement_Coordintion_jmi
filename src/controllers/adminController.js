@@ -4,7 +4,8 @@ let authenticate = async (req, res, next) => {
     if (!req.user) {
         console.log("not logged in");
         res.redirect("/admin-login");
-    } else if (req.user.id != -1) { // 4 is database id of admin
+    } else if (req.user.id != -1) {
+        // 4 is database id of admin
         console.log("not admin");
         res.redirect("/admin-login");
     } else {
@@ -50,6 +51,23 @@ let getPage = async (req, res) => {
                 console.log(err);
             }
             render.applications = applications;
+        }
+    );
+    DBConnection.query(
+        "select round_id, name company, title, round_name, date from placement_procedure natural join jobs natural join companies;",
+        (err, rounds) => {
+            if (err) {
+                console.log(err);
+            }
+            render.rounds = rounds;
+            render.rounds.forEach((round) => {
+                var date = new Date(round.date);
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDate();
+                var date_string = day + "/" + month + "/" + year;
+                round.date = date_string;
+            });
         }
     );
     setTimeout(() => {
@@ -457,6 +475,128 @@ let deleteJob = async (req, res) => {
     }, 1000);
 };
 
+let getEditRound = async (req, res) => {
+    console.log("req.params.id: ", req.params.id);
+    if (req.params.id != -1) {
+        DBConnection.query(
+            "select * from placement_procedure where round_id = ?",
+            req.params.id,
+            (err, round) => {
+                if (err) {
+                    console.log(err);
+                }
+                if (!round) {
+                    console.log("no round found");
+                    res.redirect("/admin");
+                } else {
+                    var date = new Date(round[0].date);
+                    var month = (date.getMonth() + 1).toString();
+                    if (month.length == 1) {
+                        month = '0' + month;
+                    }
+                    var year = date.getFullYear().toString();
+                    var day = date.getDate().toString();
+                    if (day.length == 1) {
+                        day = '0' + day;
+                    }
+                    var date_string = year + "-" + month + "-" + day;
+                    round[0].date = date_string;
+                    //   console.log("front end date: ",round[0].date);
+                    res.render("admin/editRound.ejs", { round: round[0] });
+                }
+            }
+        );
+    } else {
+        res.render("admin/editRound.ejs", { round: { round_id: -1 } });
+    }
+};
+
+let updateRound = async (req, res) => {
+    DBConnection.query(
+        "select * from jobs where job_id = ?",
+        req.body.job_id,
+        (err, job) => {
+            if (err) {
+                console.log(err);
+            }
+            if (!job) {
+                console.log(
+                    "No job found with the given id, hence the round can't be entered"
+                );
+                res.redirect("/admin");
+            } else {
+                if (req.params.id != -1) {
+                    DBConnection.query(
+                        "update placement_procedure set round_id = ?, job_id = ?, round_name = ?, round_description = ?, date = ?;",
+                        [
+                            req.body.round_id,
+                            req.body.job_id,
+                            req.body.round_name,
+                            req.body.round_description,
+                            req.body.date,
+                        ],
+                        (err) => {
+                            if (err) {
+                                console.log(err);
+                            }
+                        }
+                    );
+                } else {
+                    if (req.body.round_id != null && req.body.round_id > 0) {
+                        DBConnection.query(
+                            "insert into placement_procedure (round_id, job_id, round_name, round_description, date) values (?,?,?,?,?);",
+                            [
+                                req.body.round_id,
+                                req.body.job_id,
+                                req.body.round_name,
+                                req.body.round_description,
+                                req.body.date,
+                            ],
+                            (err) => {
+                                if (err) {
+                                    console.log(err);
+                                }
+                            }
+                        );
+                    } else {
+                        DBConnection.query(
+                            "insert into placement_procedure (job_id, round_name, round_description, date) values (?,?,?,?);",
+                            [
+                                req.body.job_id,
+                                req.body.round_name,
+                                req.body.round_description,
+                                req.body.date,
+                            ],
+                            (err) => {
+                                if (err) {
+                                    console.log(err);
+                                }
+                            }
+                        );
+                    }
+                }
+            }
+        }
+    );
+    setTimeout(() => {
+        res.redirect("/admin");
+    }, 1000);
+};
+let deleteRound = async (req, res) => {
+    DBConnection.query(
+        "delete from placement_procedure where round_id = ?",
+        req.params.id,
+        (err) => {
+            if (err) {
+                console.log(err);
+            }
+        }
+    );
+    setTimeout(() => {
+        res.redirect("/admin");
+    }, 1000);
+};
+
 let acceptApplication = async (req, res) => {
     console.log("req.params.id: ", req.params.id);
     DBConnection.query(
@@ -533,6 +673,9 @@ module.exports = {
     getEditJob: getEditJob,
     updateJob: updateJob,
     deleteJob: deleteJob,
+    getEditRound: getEditRound,
+    updateRound: updateRound,
+    deleteRound: deleteRound,
     acceptApplication: acceptApplication,
     rejectApplication: rejectApplication,
     resetApplication: resetApplication,

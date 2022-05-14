@@ -11,9 +11,7 @@
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/adminPage.css" />
     
   </head>
@@ -23,7 +21,7 @@
       <nav>
         <div class="container">
           <div class="text-center">
-            <h1 href="/" class="nav-brand text-dark">Admin Panel</h1>
+            <a href="/" class="nav-brand text-dark">Admin Panel</a>
           </div>
         </div>
       </nav>
@@ -294,6 +292,69 @@
                       <a href="/update-job/-1" class="btn border-shadow">
                         <span class="text-gradient"
                           >New Job <i class="fas fa-user"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+
+      <!-- Placement Rounds handling -->
+      <br>
+       <div class="container">
+        <h3><button id="toggle-job" class="btn btn-primary">
+          <i class="fas fa-caret-down"></i>
+        </button> Rounds </h3>
+        <div id="rounds-table">
+          <form action="/" method="POST">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Round ID</th>
+                  <th>Company</th>
+                  <th>Job Title</th>
+                  <th>Round Name</th>
+                  <th>Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i = 0; i < rounds.length; i++) { %>
+                <tr>
+                  <td><%= rounds[i].round_id %></td>
+                  <td><%= rounds[i].company %></td>
+                  <td><%= rounds[i].title %></td>
+                  <td><%= rounds[i].round_name %></td>
+                  <td><%= rounds[i].date %></td>
+                  <td>
+                    <a
+                      href="/update-round/<%= rounds[i].round_id%>"
+                      class="btn border-shadow update"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fas fa-pencil-alt"></i
+                      ></span>
+                    </a>
+                    <a
+                      href="/delete-round/<%= rounds[i].round_id%>"
+                      class="btn border-shadow delete"
+                    >
+                      <span class="text-gradient"
+                        ><i class="fa fa-trash"></i
+                      ></span>
+                    </a>
+                  </td>
+                </tr>
+                <% } %>
+                <tr>
+                  <td colspan="9">
+                      <a href="/update-round/-1" class="btn border-shadow">
+                        <span class="text-gradient"
+                          >New Round <i class="fas fa-user"></i
                         ></span>
                       </a>
                     </div>
