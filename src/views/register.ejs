@@ -48,7 +48,7 @@
         <div class="container-fluid">
             <div class="logo">
                 <img src="images/JMI logo.jpeg" alt="jamia_logo" />
-              </div>
+            </div>
             <a class="navbar-brand" href="#">UNIVERSITY PLACEMENT CELL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -80,26 +80,23 @@
     <div class="main">
         <h1 class="heading">Create New Account</h1>
         <hr />
-        <h2>Account</h2>
 
         <button class="google-signup">
-            <i class="fab fa-google"></i> Create account using Google
-        </button>
-
+        <i class="fab fa-google"></i> Create account using Google
+      </button>
         <p>OR</p>
-        
         <form action="/register" name="candidate-form" method="post">
-            <input type="fullname" id="fullname" name="fullname" placeholder="Full Name" required />
-            <input type="studentid" id="studentid" name="studentid" placeholder="Jamia Student id" required />
+            <input type="text" id="fullname" name="fullname" placeholder="&#xf007;  Full Name" required />
+            <input type="number" min="200000000" max="209999999" id="studentid" name="studentid" placeholder="&#xf2c1;  Jamia Student ID" required />
             <input type="email" id="email" name="email" placeholder="&#xf0e0;  Email" required />
             <input type="password" id="password" name="password" placeholder="&#xf023;  Password" required />
-            <input type="password" name="passwordConfirmation" placeholder="&#xf3ed;  Confirm Password" required />
+            <input type="password" name="passwordConfirmation" placeholder="&#xf3ed; Confirm Password" required />
             <div>
                 <% if(errors != ""){%>
                     <% errors.forEach((item)=> {%>
                         <button class="error"><%= item %></button>
-                    <% }) %>
-                <%}%>
+                        <% }) %>
+                            <%}%>
             </div>
             <input class="next" type="submit" value="Next" />
         </form>
