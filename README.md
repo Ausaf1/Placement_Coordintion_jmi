@@ -4,10 +4,9 @@ It is a nodejs application for smooth conduction of placement coordination. It w
 
 
 
-## Lessons Learned
+## Technologies Used
 
-Nodejs , express, ejs , user authentication
-(I will add more with progress)
+Nodejs , express, ejs , mysql
 
 
 
